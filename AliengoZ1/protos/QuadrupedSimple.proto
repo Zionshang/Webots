@@ -1,0 +1,810 @@
+#VRML_SIM R2023b utf8
+# license: Apache License 2.0
+# license url: http://www.apache.org/licenses/LICENSE-2.0
+# This is a proto file for Webots for the QuadrupedSimple
+# Extracted from: /home/zishang/URDF/simulink_simple_model/robot_description/quadruped_description/quadruped_simple.urdf
+
+PROTO QuadrupedSimple [
+  field  SFVec3f     translation     0 0 0
+  field  SFRotation  rotation        0 0 1 0
+  field  SFString    name            "QuadrupedSimple"  # Is `Robot.name`.
+  field  SFString    controller      "void"             # Is `Robot.controller`.
+  field  MFString    controllerArgs  []                 # Is `Robot.controllerArgs`.
+  field  SFString    customData      ""                 # Is `Robot.customData`.
+  field  SFBool      supervisor      FALSE              # Is `Robot.supervisor`.
+  field  SFBool      synchronization TRUE               # Is `Robot.synchronization`.
+  field  SFBool      selfCollision   FALSE              # Is `Robot.selfCollision`.
+]
+{
+  Robot {
+    translation IS translation
+    rotation IS rotation
+    controller IS controller
+    controllerArgs IS controllerArgs
+    customData IS customData
+    supervisor IS supervisor
+    synchronization IS synchronization
+    selfCollision IS selfCollision
+    children [
+      Shape {
+        appearance DEF base_material PBRAppearance {
+          baseColor 0.500000 0.500000 0.500000
+          roughness 1.000000
+          metalness 0
+        }
+        geometry Box {
+           size 0.500000 0.240000 0.150000
+        }
+      }
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          anchor 0.280000 -0.120000 0.000000
+        }
+        device [
+          RotationalMotor {
+            name "leg1_hip_joint"
+            maxVelocity 10.0
+            minPosition -3.14
+            maxPosition 3.14
+            maxTorque 300.0
+          }
+          PositionSensor {
+            name "leg1_hip_joint_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation 0.280000 -0.120000 0.000000
+          children [
+            Pose {
+              rotation -0.577429 0.577311 0.577311 2.094630
+              children [
+                Shape {
+                  appearance DEF hip_material PBRAppearance {
+                    baseColor 0.500000 0.500000 0.500000
+                    roughness 1.000000
+                    metalness 0
+                  }
+                  geometry Cylinder {
+                    radius 0.025
+                    height 0.08
+                  }
+                }
+              ]
+            }
+            HingeJoint {
+              jointParameters HingeJointParameters {
+                axis 0.000000 1.000000 0.000000
+                anchor 0.000000 -0.080000 0.000000
+              }
+              device [
+                RotationalMotor {
+                  name "leg1_thigh_joint"
+                  maxVelocity 10.0
+                  minPosition -3.14
+                  maxPosition 3.14
+                  maxTorque 300.0
+                }
+                PositionSensor {
+                  name "leg1_thigh_joint_sensor"
+                }
+              ]
+              endPoint Solid {
+                translation 0.000000 -0.080000 0.000000
+                children [
+                  Pose {
+                    translation 0.000000 0.000000 -0.170000
+                    children [
+                      Shape {
+                        appearance DEF thigh_material PBRAppearance {
+                          baseColor 0.500000 0.500000 0.500000
+                          roughness 1.000000
+                          metalness 0
+                        }
+                        geometry Cylinder {
+                          radius 0.025
+                          height 0.34
+                        }
+                      }
+                    ]
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0.000000 1.000000 0.000000
+                      anchor 0.000000 0.000000 -0.360000
+                    }
+                    device [
+                      RotationalMotor {
+                        name "leg1_shank_joint"
+                        maxVelocity 10.0
+                        minPosition -3.14
+                        maxPosition 3.14
+                        maxTorque 300.0
+                      }
+                      PositionSensor {
+                        name "leg1_shank_joint_sensor"
+                      }
+                    ]
+                    endPoint Solid {
+                      translation 0.000000 0.000000 -0.360000
+                      children [
+                        Pose {
+                          translation 0.000000 0.000000 -0.165000
+                          children [
+                            Shape {
+                              appearance DEF shank_material PBRAppearance {
+                                baseColor 0.500000 0.500000 0.500000
+                                roughness 1.000000
+                                metalness 0
+                              }
+                              geometry Cylinder {
+                                radius 0.015
+                                height 0.33
+                              }
+                            }
+                          ]
+                        }
+                        Solid {
+                          translation 0.000000 0.000000 -0.360000
+                          children [
+                            Shape {
+                              appearance DEF toe_material PBRAppearance {
+                                baseColor 0.500000 0.500000 0.500000
+                                roughness 1.000000
+                                metalness 0
+                              }
+                              geometry Sphere {
+                                radius 0.035
+                              }
+                            }
+                          ]
+                          name "leg1_toe"
+                          boundingObject Sphere {
+                            radius 0.035
+                          }
+                          physics Physics {
+                            density -1
+                            mass 0.100000
+                            centerOfMass [ 0.000000 0.000000 0.000000 ]
+                            inertiaMatrix [
+                              1.600000e-05 1.600000e-05 1.600000e-05
+                              0.000000e+00 0.000000e+00 0.000000e+00
+                            ]
+                          }
+                        }
+                      ]
+                      name "leg1_shank"
+                      boundingObject Pose {
+                        translation 0.000000 0.000000 -0.165000
+                        children [
+                          Cylinder {
+                            radius 0.015
+                            height 0.33
+                          }
+                        ]
+                      }
+                      physics Physics {
+                        density -1
+                        mass 0.500000
+                        centerOfMass [ 0.000000 0.000000 -0.180000 ]
+                        inertiaMatrix [
+                          5.428100e-03 5.428100e-03 5.625000e-05
+                          0.000000e+00 0.000000e+00 0.000000e+00
+                        ]
+                      }
+                    }
+                  }
+                ]
+                name "leg1_thigh"
+                boundingObject Pose {
+                  translation 0.000000 0.000000 -0.170000
+                  children [
+                    Cylinder {
+                      radius 0.025
+                      height 0.34
+                    }
+                  ]
+                }
+                physics Physics {
+                  density -1
+                  mass 1.000000
+                  centerOfMass [ 0.000000 0.000000 -0.180000 ]
+                  inertiaMatrix [
+                    1.095600e-02 1.095600e-02 3.125000e-04
+                    0.000000e+00 0.000000e+00 0.000000e+00
+                  ]
+                }
+              }
+            }
+          ]
+          name "leg1_hip"
+          boundingObject Pose {
+            rotation -0.577429 0.577311 0.577311 2.094630
+            children [
+              Cylinder {
+                radius 0.025
+                height 0.08
+              }
+            ]
+          }
+          physics Physics {
+            density -1
+            mass 2.000000
+            centerOfMass [ 0.000000 0.000000 0.000000 ]
+            inertiaMatrix [
+              4.579200e-03 6.250000e-04 4.579200e-03
+              0.000000e+00 0.000000e+00 0.000000e+00
+            ]
+          }
+        }
+      }
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          anchor -0.280000 -0.120000 0.000000
+        }
+        device [
+          RotationalMotor {
+            name "leg2_hip_joint"
+            maxVelocity 10.0
+            minPosition -3.14
+            maxPosition 3.14
+            maxTorque 300.0
+          }
+          PositionSensor {
+            name "leg2_hip_joint_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation -0.280000 -0.120000 0.000000
+          children [
+            Pose {
+              rotation -0.577429 0.577311 0.577311 2.094630
+              children [
+                Shape {
+                  appearance USE hip_material
+                  geometry Cylinder {
+                    radius 0.025
+                    height 0.08
+                  }
+                }
+              ]
+            }
+            HingeJoint {
+              jointParameters HingeJointParameters {
+                axis 0.000000 1.000000 0.000000
+                anchor 0.000000 -0.080000 0.000000
+              }
+              device [
+                RotationalMotor {
+                  name "leg2_thigh_joint"
+                  maxVelocity 10.0
+                  minPosition -3.14
+                  maxPosition 3.14
+                  maxTorque 300.0
+                }
+                PositionSensor {
+                  name "leg2_thigh_joint_sensor"
+                }
+              ]
+              endPoint Solid {
+                translation 0.000000 -0.080000 0.000000
+                children [
+                  Pose {
+                    translation 0.000000 0.000000 -0.170000
+                    children [
+                      Shape {
+                        appearance USE thigh_material
+                        geometry Cylinder {
+                          radius 0.025
+                          height 0.34
+                        }
+                      }
+                    ]
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0.000000 1.000000 0.000000
+                      anchor 0.000000 0.000000 -0.360000
+                    }
+                    device [
+                      RotationalMotor {
+                        name "leg2_shank_joint"
+                        maxVelocity 10.0
+                        minPosition -3.14
+                        maxPosition 3.14
+                        maxTorque 300.0
+                      }
+                      PositionSensor {
+                        name "leg2_shank_joint_sensor"
+                      }
+                    ]
+                    endPoint Solid {
+                      translation 0.000000 0.000000 -0.360000
+                      children [
+                        Pose {
+                          translation 0.000000 0.000000 -0.165000
+                          children [
+                            Shape {
+                              appearance USE shank_material
+                              geometry Cylinder {
+                                radius 0.015
+                                height 0.33
+                              }
+                            }
+                          ]
+                        }
+                        Solid {
+                          translation 0.000000 0.000000 -0.360000
+                          children [
+                            Shape {
+                              appearance USE toe_material
+                              geometry Sphere {
+                                radius 0.035
+                              }
+                            }
+                          ]
+                          name "leg2_toe"
+                          boundingObject Sphere {
+                            radius 0.035
+                          }
+                          physics Physics {
+                            density -1
+                            mass 0.100000
+                            centerOfMass [ 0.000000 0.000000 0.000000 ]
+                            inertiaMatrix [
+                              1.600000e-05 1.600000e-05 1.600000e-05
+                              0.000000e+00 0.000000e+00 0.000000e+00
+                            ]
+                          }
+                        }
+                      ]
+                      name "leg2_shank"
+                      boundingObject Pose {
+                        translation 0.000000 0.000000 -0.165000
+                        children [
+                          Cylinder {
+                            radius 0.015
+                            height 0.33
+                          }
+                        ]
+                      }
+                      physics Physics {
+                        density -1
+                        mass 0.500000
+                        centerOfMass [ 0.000000 0.000000 -0.180000 ]
+                        inertiaMatrix [
+                          5.428100e-03 5.428100e-03 5.625000e-05
+                          0.000000e+00 0.000000e+00 0.000000e+00
+                        ]
+                      }
+                    }
+                  }
+                ]
+                name "leg2_thigh"
+                boundingObject Pose {
+                  translation 0.000000 0.000000 -0.170000
+                  children [
+                    Cylinder {
+                      radius 0.025
+                      height 0.34
+                    }
+                  ]
+                }
+                physics Physics {
+                  density -1
+                  mass 1.000000
+                  centerOfMass [ 0.000000 0.000000 -0.180000 ]
+                  inertiaMatrix [
+                    1.095600e-02 1.095600e-02 3.125000e-04
+                    0.000000e+00 0.000000e+00 0.000000e+00
+                  ]
+                }
+              }
+            }
+          ]
+          name "leg2_hip"
+          boundingObject Pose {
+            rotation -0.577429 0.577311 0.577311 2.094630
+            children [
+              Cylinder {
+                radius 0.025
+                height 0.08
+              }
+            ]
+          }
+          physics Physics {
+            density -1
+            mass 2.000000
+            centerOfMass [ 0.000000 0.000000 0.000000 ]
+            inertiaMatrix [
+              4.579200e-03 6.250000e-04 4.579200e-03
+              0.000000e+00 0.000000e+00 0.000000e+00
+            ]
+          }
+        }
+      }
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          anchor 0.280000 0.120000 0.000000
+        }
+        device [
+          RotationalMotor {
+            name "leg3_hip_joint"
+            maxVelocity 10.0
+            minPosition -3.14
+            maxPosition 3.14
+            maxTorque 300.0
+          }
+          PositionSensor {
+            name "leg3_hip_joint_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation 0.280000 0.120000 0.000000
+          children [
+            Pose {
+              rotation -0.577429 0.577311 0.577311 2.094630
+              children [
+                Shape {
+                  appearance USE hip_material
+                  geometry Cylinder {
+                    radius 0.025
+                    height 0.08
+                  }
+                }
+              ]
+            }
+            HingeJoint {
+              jointParameters HingeJointParameters {
+                axis 0.000000 1.000000 0.000000
+                anchor 0.000000 0.080000 0.000000
+              }
+              device [
+                RotationalMotor {
+                  name "leg3_thigh_joint"
+                  maxVelocity 10.0
+                  minPosition -3.14
+                  maxPosition 3.14
+                  maxTorque 300.0
+                }
+                PositionSensor {
+                  name "leg3_thigh_joint_sensor"
+                }
+              ]
+              endPoint Solid {
+                translation 0.000000 0.080000 0.000000
+                children [
+                  Pose {
+                    translation 0.000000 0.000000 -0.170000
+                    children [
+                      Shape {
+                        appearance USE thigh_material
+                        geometry Cylinder {
+                          radius 0.025
+                          height 0.34
+                        }
+                      }
+                    ]
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0.000000 1.000000 0.000000
+                      anchor 0.000000 0.000000 -0.360000
+                    }
+                    device [
+                      RotationalMotor {
+                        name "leg3_shank_joint"
+                        maxVelocity 10.0
+                        minPosition -3.14
+                        maxPosition 3.14
+                        maxTorque 300.0
+                      }
+                      PositionSensor {
+                        name "leg3_shank_joint_sensor"
+                      }
+                    ]
+                    endPoint Solid {
+                      translation 0.000000 0.000000 -0.360000
+                      children [
+                        Pose {
+                          translation 0.000000 0.000000 -0.165000
+                          children [
+                            Shape {
+                              appearance USE shank_material
+                              geometry Cylinder {
+                                radius 0.015
+                                height 0.33
+                              }
+                            }
+                          ]
+                        }
+                        Solid {
+                          translation 0.000000 0.000000 -0.360000
+                          children [
+                            Shape {
+                              appearance USE toe_material
+                              geometry Sphere {
+                                radius 0.035
+                              }
+                            }
+                          ]
+                          name "leg3_toe"
+                          boundingObject Sphere {
+                            radius 0.035
+                          }
+                          physics Physics {
+                            density -1
+                            mass 0.100000
+                            centerOfMass [ 0.000000 0.000000 0.000000 ]
+                            inertiaMatrix [
+                              1.600000e-05 1.600000e-05 1.600000e-05
+                              0.000000e+00 0.000000e+00 0.000000e+00
+                            ]
+                          }
+                        }
+                      ]
+                      name "leg3_shank"
+                      boundingObject Pose {
+                        translation 0.000000 0.000000 -0.165000
+                        children [
+                          Cylinder {
+                            radius 0.015
+                            height 0.33
+                          }
+                        ]
+                      }
+                      physics Physics {
+                        density -1
+                        mass 0.500000
+                        centerOfMass [ 0.000000 0.000000 -0.180000 ]
+                        inertiaMatrix [
+                          5.428100e-03 5.428100e-03 5.625000e-05
+                          0.000000e+00 0.000000e+00 0.000000e+00
+                        ]
+                      }
+                    }
+                  }
+                ]
+                name "leg3_thigh"
+                boundingObject Pose {
+                  translation 0.000000 0.000000 -0.170000
+                  children [
+                    Cylinder {
+                      radius 0.025
+                      height 0.34
+                    }
+                  ]
+                }
+                physics Physics {
+                  density -1
+                  mass 1.000000
+                  centerOfMass [ 0.000000 0.000000 -0.180000 ]
+                  inertiaMatrix [
+                    1.095600e-02 1.095600e-02 3.125000e-04
+                    0.000000e+00 0.000000e+00 0.000000e+00
+                  ]
+                }
+              }
+            }
+          ]
+          name "leg3_hip"
+          boundingObject Pose {
+            rotation -0.577429 0.577311 0.577311 2.094630
+            children [
+              Cylinder {
+                radius 0.025
+                height 0.08
+              }
+            ]
+          }
+          physics Physics {
+            density -1
+            mass 2.000000
+            centerOfMass [ 0.000000 0.000000 0.000000 ]
+            inertiaMatrix [
+              4.579200e-03 6.250000e-04 4.579200e-03
+              0.000000e+00 0.000000e+00 0.000000e+00
+            ]
+          }
+        }
+      }
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          anchor -0.280000 0.120000 0.000000
+        }
+        device [
+          RotationalMotor {
+            name "leg4_hip_joint"
+            maxVelocity 10.0
+            minPosition -3.14
+            maxPosition 3.14
+            maxTorque 300.0
+          }
+          PositionSensor {
+            name "leg4_hip_joint_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation -0.280000 0.120000 0.000000
+          children [
+            Pose {
+              rotation -0.577429 0.577311 0.577311 2.094630
+              children [
+                Shape {
+                  appearance USE hip_material
+                  geometry Cylinder {
+                    radius 0.025
+                    height 0.08
+                  }
+                }
+              ]
+            }
+            HingeJoint {
+              jointParameters HingeJointParameters {
+                axis 0.000000 1.000000 0.000000
+                anchor 0.000000 0.080000 0.000000
+              }
+              device [
+                RotationalMotor {
+                  name "leg4_thigh_joint"
+                  maxVelocity 10.0
+                  minPosition -3.14
+                  maxPosition 3.14
+                  maxTorque 300.0
+                }
+                PositionSensor {
+                  name "leg4_thigh_joint_sensor"
+                }
+              ]
+              endPoint Solid {
+                translation 0.000000 0.080000 0.000000
+                children [
+                  Pose {
+                    translation 0.000000 0.000000 -0.170000
+                    children [
+                      Shape {
+                        appearance USE thigh_material
+                        geometry Cylinder {
+                          radius 0.025
+                          height 0.34
+                        }
+                      }
+                    ]
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0.000000 1.000000 0.000000
+                      anchor 0.000000 0.000000 -0.360000
+                    }
+                    device [
+                      RotationalMotor {
+                        name "leg4_shank_joint"
+                        maxVelocity 10.0
+                        minPosition -3.14
+                        maxPosition 3.14
+                        maxTorque 300.0
+                      }
+                      PositionSensor {
+                        name "leg4_shank_joint_sensor"
+                      }
+                    ]
+                    endPoint Solid {
+                      translation 0.000000 0.000000 -0.360000
+                      children [
+                        Pose {
+                          translation 0.000000 0.000000 -0.165000
+                          children [
+                            Shape {
+                              appearance USE shank_material
+                              geometry Cylinder {
+                                radius 0.015
+                                height 0.33
+                              }
+                            }
+                          ]
+                        }
+                        Solid {
+                          translation 0.000000 0.000000 -0.360000
+                          children [
+                            Shape {
+                              appearance USE toe_material
+                              geometry Sphere {
+                                radius 0.035
+                              }
+                            }
+                          ]
+                          name "leg4_toe"
+                          boundingObject Sphere {
+                            radius 0.035
+                          }
+                          physics Physics {
+                            density -1
+                            mass 0.100000
+                            centerOfMass [ 0.000000 0.000000 0.000000 ]
+                            inertiaMatrix [
+                              1.600000e-05 1.600000e-05 1.600000e-05
+                              0.000000e+00 0.000000e+00 0.000000e+00
+                            ]
+                          }
+                        }
+                      ]
+                      name "leg4_shank"
+                      boundingObject Pose {
+                        translation 0.000000 0.000000 -0.165000
+                        children [
+                          Cylinder {
+                            radius 0.015
+                            height 0.33
+                          }
+                        ]
+                      }
+                      physics Physics {
+                        density -1
+                        mass 0.500000
+                        centerOfMass [ 0.000000 0.000000 -0.180000 ]
+                        inertiaMatrix [
+                          5.428100e-03 5.428100e-03 5.625000e-05
+                          0.000000e+00 0.000000e+00 0.000000e+00
+                        ]
+                      }
+                    }
+                  }
+                ]
+                name "leg4_thigh"
+                boundingObject Pose {
+                  translation 0.000000 0.000000 -0.170000
+                  children [
+                    Cylinder {
+                      radius 0.025
+                      height 0.34
+                    }
+                  ]
+                }
+                physics Physics {
+                  density -1
+                  mass 1.000000
+                  centerOfMass [ 0.000000 0.000000 -0.180000 ]
+                  inertiaMatrix [
+                    1.095600e-02 1.095600e-02 3.125000e-04
+                    0.000000e+00 0.000000e+00 0.000000e+00
+                  ]
+                }
+              }
+            }
+          ]
+          name "leg4_hip"
+          boundingObject Pose {
+            rotation -0.577429 0.577311 0.577311 2.094630
+            children [
+              Cylinder {
+                radius 0.025
+                height 0.08
+              }
+            ]
+          }
+          physics Physics {
+            density -1
+            mass 2.000000
+            centerOfMass [ 0.000000 0.000000 0.000000 ]
+            inertiaMatrix [
+              4.579200e-03 6.250000e-04 4.579200e-03
+              0.000000e+00 0.000000e+00 0.000000e+00
+            ]
+          }
+        }
+      }
+    ]
+    name IS name
+    boundingObject Box {
+       size 0.500000 0.240000 0.150000
+    }
+    physics Physics {
+      density -1
+      mass 30.000000
+      centerOfMass [ 0.000000 0.000000 0.000000 ]
+      inertiaMatrix [
+        2.002500e-01 6.812500e-01 7.690000e-01
+        0.000000e+00 0.000000e+00 0.000000e+00
+      ]
+    }
+  }
+}

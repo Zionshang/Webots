@@ -1,0 +1,335 @@
+#VRML_SIM R2023b utf8
+# license: Apache License 2.0
+# license url: http://www.apache.org/licenses/LICENSE-2.0
+# This is a proto file for Webots for the Z1SimpleShape
+# Extracted from: /home/zishang/URDF/unitree/robots/z1_description/urdf/z1_simple_shape.urdf
+
+PROTO Z1SimpleShape [
+  field  SFVec3f     translation     0 0 0
+  field  SFRotation  rotation        0 0 1 0
+  field  SFString    name            "Z1SimpleShape"  # Is `Robot.name`.
+  field  SFString    controller      "void"           # Is `Robot.controller`.
+  field  MFString    controllerArgs  []               # Is `Robot.controllerArgs`.
+  field  SFString    customData      ""               # Is `Robot.customData`.
+  field  SFBool      supervisor      FALSE            # Is `Robot.supervisor`.
+  field  SFBool      synchronization TRUE             # Is `Robot.synchronization`.
+  field  SFBool      selfCollision   FALSE            # Is `Robot.selfCollision`.
+]
+{
+  Robot {
+    translation IS translation
+    rotation IS rotation
+    controller IS controller
+    controllerArgs IS controllerArgs
+    customData IS customData
+    supervisor IS supervisor
+    synchronization IS synchronization
+    selfCollision IS selfCollision
+    children [
+      Solid {
+        children [
+          Pose {
+            translation 0.000000 0.000000 0.025500
+            children [
+              Shape {
+                appearance DEF red PBRAppearance {
+                  baseColor 0.500000 0.500000 0.500000
+                  transparency 0.100000
+                  roughness 1.000000
+                  metalness 0
+                }
+                geometry Cylinder {
+                  radius 0.02
+                  height 0.051
+                }
+              }
+            ]
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0.000000 0.000000 1.000000
+              anchor 0.000000 0.000000 0.058500
+            }
+            device [
+              RotationalMotor {
+                name "joint1"
+                maxVelocity 3.1415
+                minPosition -2.6179938779914944
+                maxPosition 2.6179938779914944
+                maxTorque 30.0
+              }
+              PositionSensor {
+                name "joint1_sensor"
+              }
+            ]
+            endPoint Solid {
+              translation 0.000000 0.000000 0.058500
+              children [
+                Pose {
+                  translation 0.000000 0.000000 0.025500
+                  children [
+                    Shape {
+                      appearance USE red
+                      geometry Cylinder {
+                        radius 0.02
+                        height 0.035
+                      }
+                    }
+                  ]
+                }
+                HingeJoint {
+                  jointParameters HingeJointParameters {
+                    axis 0.000000 1.000000 0.000000
+                    anchor 0.000000 0.000000 0.045000
+                  }
+                  device [
+                    RotationalMotor {
+                      name "joint2"
+                      maxVelocity 3.1415
+                      maxPosition 2.9670597283903604
+                      maxTorque 60.0
+                    }
+                    PositionSensor {
+                      name "joint2_sensor"
+                    }
+                  ]
+                  endPoint Solid {
+                    translation 0.000000 0.000000 0.045000
+                    children [
+                      Pose {
+                        translation -0.180000 0.000000 0.000000
+                        rotation 0.000000 1.000000 0.000000 1.570796
+                        children [
+                          Shape {
+                            appearance USE red
+                            geometry Cylinder {
+                              radius 0.02
+                              height 0.28
+                            }
+                          }
+                        ]
+                      }
+                      HingeJoint {
+                        jointParameters HingeJointParameters {
+                          axis 0.000000 1.000000 0.000000
+                          anchor -0.350000 0.000000 0.000000
+                        }
+                        device [
+                          RotationalMotor {
+                            name "joint3"
+                            maxVelocity 3.1415
+                            minPosition -2.8797932657906435
+                            maxTorque 30.0
+                          }
+                          PositionSensor {
+                            name "joint3_sensor"
+                          }
+                        ]
+                        endPoint Solid {
+                          translation -0.350000 0.000000 0.000000
+                          children [
+                            Pose {
+                              translation 0.128000 0.000000 0.055000
+                              rotation 0.000000 1.000000 0.000000 1.570796
+                              children [
+                                Shape {
+                                  appearance USE red
+                                  geometry Cylinder {
+                                    radius 0.02
+                                    height 0.116
+                                  }
+                                }
+                              ]
+                            }
+                            Pose {
+                              translation 0.220500 0.000000 0.055000
+                              rotation 0.000000 1.000000 0.000000 1.570796
+                              children [
+                                Shape {
+                                  appearance USE red
+                                  geometry Cylinder {
+                                    radius 0.02
+                                    height 0.059
+                                  }
+                                }
+                              ]
+                            }
+                            HingeJoint {
+                              jointParameters HingeJointParameters {
+                                axis 0.000000 1.000000 0.000000
+                                anchor 0.218000 0.000000 0.057000
+                              }
+                              device [
+                                RotationalMotor {
+                                  name "joint4"
+                                  maxVelocity 3.1415
+                                  minPosition -1.5184364492350666
+                                  maxPosition 1.5184364492350666
+                                  maxTorque 30.0
+                                }
+                                PositionSensor {
+                                  name "joint4_sensor"
+                                }
+                              ]
+                              endPoint Solid {
+                                translation 0.218000 0.000000 0.057000
+                                children [
+                                  Pose {
+                                    translation 0.072000 0.000000 0.000000
+                                    rotation 0.000000 1.000000 0.000000 1.570796
+                                    children [
+                                      Shape {
+                                        appearance USE red
+                                        geometry Cylinder {
+                                          radius 0.02
+                                          height 0.067
+                                        }
+                                      }
+                                    ]
+                                  }
+                                  HingeJoint {
+                                    jointParameters HingeJointParameters {
+                                      axis 0.000000 0.000000 1.000000
+                                      anchor 0.070000 0.000000 0.000000
+                                    }
+                                    device [
+                                      RotationalMotor {
+                                        name "joint5"
+                                        maxVelocity 3.1415
+                                        minPosition -1.3439035240356338
+                                        maxPosition 1.3439035240356338
+                                        maxTorque 30.0
+                                      }
+                                      PositionSensor {
+                                        name "joint5_sensor"
+                                      }
+                                    ]
+                                    endPoint Solid {
+                                      translation 0.070000 0.000000 0.000000
+                                      children [
+                                        HingeJoint {
+                                          jointParameters HingeJointParameters {
+                                            anchor 0.049200 0.000000 0.000000
+                                          }
+                                          device [
+                                            RotationalMotor {
+                                              name "joint6"
+                                              maxVelocity 3.1415
+                                              minPosition -2.792526803190927
+                                              maxPosition 2.792526803190927
+                                              maxTorque 30.0
+                                            }
+                                            PositionSensor {
+                                              name "joint6_sensor"
+                                            }
+                                          ]
+                                          endPoint Solid {
+                                            translation 0.049200 0.000000 0.000000
+                                            children [
+                                              Pose {
+                                                translation 0.025500 0.000000 0.000000
+                                                rotation 0.000000 1.000000 0.000000 1.570796
+                                                children [
+                                                  Shape {
+                                                    appearance USE red
+                                                    geometry Cylinder {
+                                                      radius 0.02
+                                                      height 0.051
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                            name "link06"
+                                            physics Physics {
+                                              density -1
+                                              mass 0.288758
+                                              centerOfMass [ 0.024157 -0.000174 -0.001439 ]
+                                              inertiaMatrix [
+                                                1.832800e-04 1.475000e-04 1.468000e-04
+                                                1.220000e-06 5.400000e-07 8.000000e-08
+                                              ]
+                                            }
+                                          }
+                                        }
+                                      ]
+                                      name "link05"
+                                      physics Physics {
+                                        density -1
+                                        mass 0.389385
+                                        centerOfMass [ 0.031215 0.000000 0.006463 ]
+                                        inertiaMatrix [
+                                          1.760500e-04 5.589600e-04 5.386000e-04
+                                          4.000000e-07 5.689000e-05 -1.300000e-07
+                                        ]
+                                      }
+                                    }
+                                  }
+                                ]
+                                name "link04"
+                                physics Physics {
+                                  density -1
+                                  mass 0.564046
+                                  centerOfMass [ 0.043667 0.003647 -0.001702 ]
+                                  inertiaMatrix [
+                                    3.157600e-04 9.299600e-04 9.791200e-04
+                                    8.130000e-05 4.091000e-05 -5.960000e-06
+                                  ]
+                                }
+                              }
+                            }
+                          ]
+                          name "link03"
+                          physics Physics {
+                            density -1
+                            mass 0.839409
+                            centerOfMass [ 0.106092 -0.005418 0.034764 ]
+                            inertiaMatrix [
+                              1.080610e-03 9.542380e-03 8.866210e-03
+                              -8.669000e-05 -2.081020e-03 -1.332000e-05
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                    name "link02"
+                    physics Physics {
+                      density -1
+                      mass 1.191323
+                      centerOfMass [ -0.110126 0.002400 0.001583 ]
+                      inertiaMatrix [
+                        1.021380e-03 2.429457e-02 2.466114e-02
+                        6.235800e-04 5.130000e-06 -2.100000e-06
+                      ]
+                    }
+                  }
+                }
+              ]
+              name "link01"
+              physics Physics {
+                density -1
+                mass 0.673326
+                centerOfMass [ 0.000002 -0.000252 0.023172 ]
+                inertiaMatrix [
+                  1.283280e-03 7.193100e-04 8.393600e-04
+                  -6.000000e-08 -4.000000e-07 5.000000e-07
+                ]
+              }
+            }
+          }
+        ]
+        name "link00"
+        physics Physics {
+          density -1
+          mass 0.472475
+          centerOfMass [ -0.003350 -0.000136 0.024958 ]
+          inertiaMatrix [
+            3.793700e-04 4.152100e-04 5.306600e-04
+            -3.500000e-07 -1.037000e-05 -9.900000e-07
+          ]
+        }
+      }
+    ]
+    name IS name
+  }
+}

@@ -1,0 +1,711 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+
+WorldInfo {
+  basicTimeStep 1
+  FPS 30
+}
+Viewpoint {
+  orientation 0.17196868344247773 -0.1697182699884278 -0.9703723412933801 4.669138028805131
+  position 1.3376870158602538 -5.096216136839123 2.0852772152599908
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 10 10
+}
+DEF MiniCheetah Robot {
+  translation 0 0 0.29538
+  children [
+    Solid {
+      children [
+        InertialUnit {
+          name "trunk_imu_inertial"
+        }
+        Gyro {
+          name "trunk_imu_gyro"
+        }
+      ]
+      name "imu_link"
+      physics Physics {
+        density -1
+        mass 0.001
+      }
+    }
+    DEF mini_body_visual CadShape {
+      url [
+        "/home/zishang/Webots/mini_cheetah/protos/meshes/mini_body.obj"
+      ]
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 7.584930737042856e-07
+        anchor 0.19 0.049 0
+      }
+      device [
+        RotationalMotor {
+          name "torso_to_abduct_fl_j"
+          maxVelocity 40
+          minPosition -1.6
+          maxPosition 1.6
+          maxTorque 18
+        }
+        PositionSensor {
+          name "torso_to_abduct_fl_j_sensor"
+        }
+      ]
+      endPoint Solid {
+        translation 0.19 0.049 0
+        rotation 1 0 0 7.586432731960971e-07
+        children [
+          Pose {
+            translation -0.055 0 0
+            rotation 0 0 -1 1.5708
+            children [
+              DEF mini_abad_visual CadShape {
+                url [
+                  "/home/zishang/Webots/mini_cheetah/protos/meshes/mini_abad.obj"
+                ]
+              }
+            ]
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              position -0.8000002443113344
+              axis 0 -1 0
+              anchor 0 0.062 0
+            }
+            device [
+              RotationalMotor {
+                name "abduct_fl_to_thigh_fl_j"
+                maxVelocity 40
+                minPosition -2.6
+                maxPosition 2.6
+                maxTorque 18
+              }
+              PositionSensor {
+                name "abduct_fl_to_thigh_fl_j_sensor"
+              }
+            ]
+            endPoint Solid {
+              translation 0 0.062 0
+              rotation 0 1 0 0.8000002443113344
+              children [
+                Pose {
+                  rotation 0.7071082808005322 -3.300001310467081e-05 0.7071052807993409 3.141527
+                  children [
+                    DEF mini_upper_link_visual CadShape {
+                      url [
+                        "/home/zishang/Webots/mini_cheetah/protos/meshes/mini_upper_link.obj"
+                      ]
+                    }
+                  ]
+                }
+                HingeJoint {
+                  jointParameters HingeJointParameters {
+                    position 1.6000031839741995
+                    axis 0 -1 0
+                    anchor 0 0 -0.209
+                  }
+                  device [
+                    RotationalMotor {
+                      name "thigh_fl_to_knee_fl_j"
+                      maxVelocity 26
+                      minPosition -2.6
+                      maxPosition 2.6
+                      maxTorque 26
+                    }
+                    PositionSensor {
+                      name "thigh_fl_to_knee_fl_j_sensor"
+                    }
+                  ]
+                  endPoint Solid {
+                    translation 0 0 -0.209
+                    rotation 0 -0.9999999999999999 0 1.6000031839741993
+                    children [
+                      Pose {
+                        rotation 0 1 0 3.141592
+                        children [
+                          DEF mini_lower_link_visual CadShape {
+                            url [
+                              "/home/zishang/Webots/mini_cheetah/protos/meshes/mini_lower_link.obj"
+                            ]
+                          }
+                        ]
+                      }
+                      Solid {
+                        translation 0 0 -0.19
+                        children [
+                          Shape {
+                            appearance PBRAppearance {
+                              baseColor 0.5 0.5 0.5
+                              roughness 1
+                              metalness 0
+                            }
+                            geometry Sphere {
+                              radius 0.0175
+                            }
+                          }
+                        ]
+                        name "LF_FOOT"
+                        boundingObject Sphere {
+                          radius 0.0175
+                        }
+                        physics Physics {
+                          density -1
+                          mass 0.04
+                          centerOfMass [
+                            0 0 0
+                          ]
+                          inertiaMatrix [
+                            9.6e-06 9.6e-06 9.6e-06
+                            0 0 0
+                          ]
+                        }
+                      }
+                    ]
+                    name "shank_fl"
+                    physics Physics {
+                      density -1
+                      mass 0.064
+                      centerOfMass [
+                        0 0 -0.209
+                      ]
+                      inertiaMatrix [
+                        0.000245 0.000248 6e-06
+                        0 0 0
+                      ]
+                    }
+                  }
+                }
+              ]
+              name "thigh_fl"
+              physics Physics {
+                density -1
+                mass 0.634
+                centerOfMass [
+                  0 0.016 -0.02
+                ]
+                inertiaMatrix [
+                  0.001983 0.002103 0.000508
+                  0.000245 1.3e-05 1.5e-06
+                ]
+              }
+            }
+          }
+        ]
+        name "abduct_fl"
+        physics Physics {
+          density -1
+          mass 0.54
+          centerOfMass [
+            0 0.036 0
+          ]
+          inertiaMatrix [
+            0.000381 0.00056 0.000444
+            5.8e-05 4.5e-07 9.5e-07
+          ]
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -1.033546506157279e-06
+        anchor 0.19 -0.049 0
+      }
+      device [
+        RotationalMotor {
+          name "torso_to_abduct_fr_j"
+          maxVelocity 40
+          minPosition -1.6
+          maxPosition 1.6
+          maxTorque 18
+        }
+        PositionSensor {
+          name "torso_to_abduct_fr_j_sensor"
+        }
+      ]
+      endPoint Solid {
+        translation 0.19 -0.049 0
+        rotation -1 0 0 1.0336724040523064e-06
+        children [
+          Pose {
+            translation -0.055 0 0
+            rotation 0.70710528118436 0.707108281185553 0 3.141592
+            children [
+              USE mini_abad_visual
+            ]
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              position -0.8000002018169055
+              axis 0 -1 0
+              anchor 0 -0.062 0
+            }
+            device [
+              RotationalMotor {
+                name "abduct_fr_to_thigh_fr_j"
+                maxVelocity 40
+                minPosition -2.6
+                maxPosition 2.6
+                maxTorque 18
+              }
+              PositionSensor {
+                name "abduct_fr_to_thigh_fr_j_sensor"
+              }
+            ]
+            endPoint Solid {
+              translation 0 -0.062 0
+              rotation 0 1 0 0.8000002018169055
+              children [
+                Pose {
+                  rotation 0 -1 0 1.5708
+                  children [
+                    USE mini_upper_link_visual
+                  ]
+                }
+                HingeJoint {
+                  jointParameters HingeJointParameters {
+                    position 1.6000024143393177
+                    axis 0 -1 0
+                    anchor 0 0 -0.209
+                  }
+                  device [
+                    RotationalMotor {
+                      name "thigh_fr_to_knee_fr_j"
+                      maxVelocity 26
+                      minPosition -2.6
+                      maxPosition 2.6
+                      maxTorque 26
+                    }
+                    PositionSensor {
+                      name "thigh_fr_to_knee_fr_j_sensor"
+                    }
+                  ]
+                  endPoint Solid {
+                    translation 0 0 -0.209
+                    rotation 0 -1 0 1.6000024143393177
+                    children [
+                      Pose {
+                        rotation 0 1 0 3.141592
+                        children [
+                          USE mini_lower_link_visual
+                        ]
+                      }
+                      Solid {
+                        translation 0 0 -0.19
+                        children [
+                          Shape {
+                            appearance PBRAppearance {
+                              baseColor 0.5 0.5 0.5
+                              roughness 1
+                              metalness 0
+                            }
+                            geometry Sphere {
+                              radius 0.0175
+                            }
+                          }
+                        ]
+                        name "RF_FOOT"
+                        boundingObject Sphere {
+                          radius 0.0175
+                        }
+                        physics Physics {
+                          density -1
+                          mass 0.04
+                          centerOfMass [
+                            0 0 0
+                          ]
+                          inertiaMatrix [
+                            9.6e-06 9.6e-06 9.6e-06
+                            0 0 0
+                          ]
+                        }
+                      }
+                    ]
+                    name "shank_fr"
+                    physics Physics {
+                      density -1
+                      mass 0.064
+                      centerOfMass [
+                        0 0 -0.209
+                      ]
+                      inertiaMatrix [
+                        0.000245 0.000248 6e-06
+                        0 0 0
+                      ]
+                    }
+                  }
+                }
+              ]
+              name "thigh_fr"
+              physics Physics {
+                density -1
+                mass 0.634
+                centerOfMass [
+                  0 0.016 -0.02
+                ]
+                inertiaMatrix [
+                  0.001983 0.002103 0.000508
+                  0.000245 1.3e-05 1.5e-06
+                ]
+              }
+            }
+          }
+        ]
+        name "abduct_fr"
+        physics Physics {
+          density -1
+          mass 0.54
+          centerOfMass [
+            0 0.036 0
+          ]
+          inertiaMatrix [
+            0.000381 0.00056 0.000444
+            5.8e-05 4.5e-07 9.5e-07
+          ]
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 6.334457713174767e-07
+        anchor -0.19 0.049 0
+      }
+      device [
+        RotationalMotor {
+          name "torso_to_abduct_hl_j"
+          maxVelocity 40
+          minPosition -1.6
+          maxPosition 1.6
+          maxTorque 18
+        }
+        PositionSensor {
+          name "torso_to_abduct_hl_j_sensor"
+        }
+      ]
+      endPoint Solid {
+        translation -0.19 0.049 0
+        rotation 1 0 0 6.336060650786575e-07
+        children [
+          Pose {
+            translation 0.055 0 0
+            rotation 0.70710528118436 -0.707108281185553 0 3.141592
+            children [
+              USE mini_abad_visual
+            ]
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              position -0.8000002175215848
+              axis 0 -1 0
+              anchor 0 0.062 0
+            }
+            device [
+              RotationalMotor {
+                name "abduct_hl_to_thigh_hl_j"
+                maxVelocity 40
+                minPosition -2.6
+                maxPosition 2.6
+                maxTorque 18
+              }
+              PositionSensor {
+                name "abduct_hl_to_thigh_hl_j_sensor"
+              }
+            ]
+            endPoint Solid {
+              translation 0 0.062 0
+              rotation 0 1 0 0.8000002175215849
+              children [
+                Pose {
+                  rotation 0.7071082808005322 -3.300001310467081e-05 0.7071052807993409 3.141527
+                  children [
+                    USE mini_upper_link_visual
+                  ]
+                }
+                HingeJoint {
+                  jointParameters HingeJointParameters {
+                    position 1.600002909227928
+                    axis 0 -1 0
+                    anchor 0 0 -0.209
+                  }
+                  device [
+                    RotationalMotor {
+                      name "thigh_hl_to_knee_hl_j"
+                      maxVelocity 26
+                      minPosition -2.6
+                      maxPosition 2.6
+                      maxTorque 26
+                    }
+                    PositionSensor {
+                      name "thigh_hl_to_knee_hl_j_sensor"
+                    }
+                  ]
+                  endPoint Solid {
+                    translation 0 0 -0.209
+                    rotation 0 -0.9999999999999999 0 1.6000029092279278
+                    children [
+                      Pose {
+                        rotation 0 1 0 3.141592
+                        children [
+                          USE mini_lower_link_visual
+                        ]
+                      }
+                      Solid {
+                        translation 0 0 -0.19
+                        children [
+                          Shape {
+                            appearance PBRAppearance {
+                              baseColor 0.5 0.5 0.5
+                              roughness 1
+                              metalness 0
+                            }
+                            geometry Sphere {
+                              radius 0.0175
+                            }
+                          }
+                        ]
+                        name "LH_FOOT"
+                        boundingObject Sphere {
+                          radius 0.0175
+                        }
+                        physics Physics {
+                          density -1
+                          mass 0.04
+                          centerOfMass [
+                            0 0 0
+                          ]
+                          inertiaMatrix [
+                            9.6e-06 9.6e-06 9.6e-06
+                            0 0 0
+                          ]
+                        }
+                      }
+                    ]
+                    name "shank_hl"
+                    physics Physics {
+                      density -1
+                      mass 0.064
+                      centerOfMass [
+                        0 0 -0.209
+                      ]
+                      inertiaMatrix [
+                        0.000245 0.000248 6e-06
+                        0 0 0
+                      ]
+                    }
+                  }
+                }
+              ]
+              name "thigh_hl"
+              physics Physics {
+                density -1
+                mass 0.634
+                centerOfMass [
+                  0 0.016 -0.02
+                ]
+                inertiaMatrix [
+                  0.001983 0.002103 0.000508
+                  0.000245 1.3e-05 1.5e-06
+                ]
+              }
+            }
+          }
+        ]
+        name "abduct_hl"
+        physics Physics {
+          density -1
+          mass 0.54
+          centerOfMass [
+            0 0.036 0
+          ]
+          inertiaMatrix [
+            0.000381 0.00056 0.000444
+            5.8e-05 4.5e-07 9.5e-07
+          ]
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -9.087581599962286e-07
+        anchor -0.19 -0.049 0
+      }
+      device [
+        RotationalMotor {
+          name "torso_to_abduct_hr_j"
+          maxVelocity 40
+          minPosition -1.6
+          maxPosition 1.6
+          maxTorque 18
+        }
+        PositionSensor {
+          name "torso_to_abduct_hr_j_sensor"
+        }
+      ]
+      endPoint Solid {
+        translation -0.19 -0.049 0
+        rotation -1 0 0 9.088486839519166e-07
+        children [
+          Pose {
+            translation 0.055 0 0
+            rotation 0 0 1 1.5708
+            children [
+              USE mini_abad_visual
+            ]
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              position -0.8000002136177837
+              axis 0 -1 0
+              anchor 0 -0.062 0
+            }
+            device [
+              RotationalMotor {
+                name "abduct_hr_to_thigh_hr_j"
+                maxVelocity 40
+                minPosition -2.6
+                maxPosition 2.6
+                maxTorque 18
+              }
+              PositionSensor {
+                name "abduct_hr_to_thigh_hr_j_sensor"
+              }
+            ]
+            endPoint Solid {
+              translation 0 -0.062 0
+              rotation 0 1 0 0.8000002136177837
+              children [
+                Pose {
+                  rotation 0 -1 0 1.5708
+                  children [
+                    USE mini_upper_link_visual
+                  ]
+                }
+                HingeJoint {
+                  jointParameters HingeJointParameters {
+                    position 1.6000021402413473
+                    axis 0 -1 0
+                    anchor 0 0 -0.209
+                  }
+                  device [
+                    RotationalMotor {
+                      name "thigh_hr_to_knee_hr_j"
+                      maxVelocity 26
+                      minPosition -2.6
+                      maxPosition 2.6
+                      maxTorque 26
+                    }
+                    PositionSensor {
+                      name "thigh_hr_to_knee_hr_j_sensor"
+                    }
+                  ]
+                  endPoint Solid {
+                    translation 0 0 -0.209
+                    rotation 0 -1 0 1.6000021402413473
+                    children [
+                      Pose {
+                        rotation 0 1 0 3.141592
+                        children [
+                          USE mini_lower_link_visual
+                        ]
+                      }
+                      Solid {
+                        translation 0 0 -0.19
+                        children [
+                          Shape {
+                            appearance PBRAppearance {
+                              baseColor 0.5 0.5 0.5
+                              roughness 1
+                              metalness 0
+                            }
+                            geometry Sphere {
+                              radius 0.0175
+                            }
+                          }
+                        ]
+                        name "RH_FOOT"
+                        boundingObject Sphere {
+                          radius 0.0175
+                        }
+                        physics Physics {
+                          density -1
+                          mass 0.04
+                          centerOfMass [
+                            0 0 0
+                          ]
+                          inertiaMatrix [
+                            9.6e-06 9.6e-06 9.6e-06
+                            0 0 0
+                          ]
+                        }
+                      }
+                    ]
+                    name "shank_hr"
+                    physics Physics {
+                      density -1
+                      mass 0.064
+                      centerOfMass [
+                        0 0 -0.209
+                      ]
+                      inertiaMatrix [
+                        0.000245 0.000248 6e-06
+                        0 0 0
+                      ]
+                    }
+                  }
+                }
+              ]
+              name "thigh_hr"
+              physics Physics {
+                density -1
+                mass 0.634
+                centerOfMass [
+                  0 0.016 -0.02
+                ]
+                inertiaMatrix [
+                  0.001983 0.002103 0.000508
+                  0.000245 1.3e-05 1.5e-06
+                ]
+              }
+            }
+          }
+        ]
+        name "abduct_hr"
+        physics Physics {
+          density -1
+          mass 0.54
+          centerOfMass [
+            0 0.036 0
+          ]
+          inertiaMatrix [
+            0.000381 0.00056 0.000444
+            5.8e-05 4.5e-07 9.5e-07
+          ]
+        }
+      }
+    }
+  ]
+  name "MiniCheetah"
+  boundingObject Box {
+    size 0.23 0.19 0.1
+  }
+  physics Physics {
+    density -1
+    mass 3.3
+    centerOfMass [
+      0 0 0
+    ]
+    inertiaMatrix [
+      0.011253 0.036203 0.042673
+      0 0 0
+    ]
+  }
+  controller "<extern>"
+  supervisor TRUE
+}
