@@ -38,7 +38,7 @@ DEF AliengoZ1 Robot {
     }
     DEF trunk_visual CadShape {
       url [
-        "/home/zishang/URDF/unitree/robots/aliengoZ1_description/meshes/trunk.dae"
+        "../protos/aliengoZ1_description/meshes/trunk.dae"
       ]
     }
     Solid {
@@ -108,7 +108,7 @@ DEF AliengoZ1 Robot {
             children [
               DEF hip_visual CadShape {
                 url [
-                  "/home/zishang/URDF/unitree/robots/aliengoZ1_description/meshes/hip.dae"
+                  "../protos/aliengoZ1_description/meshes/hip.dae"
                 ]
               }
             ]
@@ -135,7 +135,7 @@ DEF AliengoZ1 Robot {
               children [
                 DEF thigh_mirror_visual CadShape {
                   url [
-                    "/home/zishang/URDF/unitree/robots/aliengoZ1_description/meshes/thigh_mirror.dae"
+                    "../protos/aliengoZ1_description/meshes/thigh_mirror.dae"
                   ]
                 }
                 HingeJoint {
@@ -162,7 +162,7 @@ DEF AliengoZ1 Robot {
                     children [
                       DEF calf_visual CadShape {
                         url [
-                          "/home/zishang/URDF/unitree/robots/aliengoZ1_description/meshes/calf.dae"
+                          "../protos/aliengoZ1_description/meshes/calf.dae"
                         ]
                       }
                       Solid {
@@ -412,7 +412,7 @@ DEF AliengoZ1 Robot {
             children [
               DEF hip_visual CadShape {
                 url [
-                  "/home/zishang/URDF/unitree/robots/aliengoZ1_description/meshes/hip.dae"
+                  "../protos/aliengoZ1_description/meshes/hip.dae"
                 ]
               }
             ]
@@ -439,7 +439,7 @@ DEF AliengoZ1 Robot {
               children [
                 DEF thigh_mirror_visual CadShape {
                   url [
-                    "/home/zishang/URDF/unitree/robots/aliengoZ1_description/meshes/thigh_mirror.dae"
+                    "../protos/aliengoZ1_description/meshes/thigh_mirror.dae"
                   ]
                 }
                 HingeJoint {
@@ -466,7 +466,7 @@ DEF AliengoZ1 Robot {
                     children [
                       DEF calf_visual CadShape {
                         url [
-                          "/home/zishang/URDF/unitree/robots/aliengoZ1_description/meshes/calf.dae"
+                          "../protos/aliengoZ1_description/meshes/calf.dae"
                         ]
                       }
                       Solid {
@@ -713,7 +713,7 @@ DEF AliengoZ1 Robot {
         children [
           DEF hip_visual CadShape {
             url [
-              "/home/zishang/URDF/unitree/robots/aliengoZ1_description/meshes/hip.dae"
+              "../protos/aliengoZ1_description/meshes/hip.dae"
             ]
           }
           HingeJoint {
@@ -738,7 +738,7 @@ DEF AliengoZ1 Robot {
               children [
                 DEF thigh_visual CadShape {
                   url [
-                    "/home/zishang/URDF/unitree/robots/aliengoZ1_description/meshes/thigh.dae"
+                    "../protos/aliengoZ1_description/meshes/thigh.dae"
                   ]
                 }
                 HingeJoint {
@@ -765,7 +765,7 @@ DEF AliengoZ1 Robot {
                     children [
                       DEF calf_visual CadShape {
                         url [
-                          "/home/zishang/URDF/unitree/robots/aliengoZ1_description/meshes/calf.dae"
+                          "../protos/aliengoZ1_description/meshes/calf.dae"
                         ]
                       }
                       Solid {
@@ -1015,7 +1015,7 @@ DEF AliengoZ1 Robot {
             children [
               DEF hip_visual CadShape {
                 url [
-                  "/home/zishang/URDF/unitree/robots/aliengoZ1_description/meshes/hip.dae"
+                  "../protos/aliengoZ1_description/meshes/hip.dae"
                 ]
               }
             ]
@@ -1042,7 +1042,7 @@ DEF AliengoZ1 Robot {
               children [
                 DEF thigh_visual CadShape {
                   url [
-                    "/home/zishang/URDF/unitree/robots/aliengoZ1_description/meshes/thigh.dae"
+                    "../protos/aliengoZ1_description/meshes/thigh.dae"
                   ]
                 }
                 HingeJoint {
@@ -1069,7 +1069,7 @@ DEF AliengoZ1 Robot {
                     children [
                       DEF calf_visual CadShape {
                         url [
-                          "/home/zishang/URDF/unitree/robots/aliengoZ1_description/meshes/calf.dae"
+                          "../protos/aliengoZ1_description/meshes/calf.dae"
                         ]
                       }
                       Solid {

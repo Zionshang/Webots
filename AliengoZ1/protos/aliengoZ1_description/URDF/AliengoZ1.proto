@@ -39,7 +39,7 @@ PROTO AliengoZ1 [
       Solid {
         children [
           DEF trunk_visual CadShape {
-            url "/home/zishang/URDF/unitree/robots/aliengoZ1_description/meshes/trunk.dae"
+            url "../protos/aliengoZ1_description/meshes/trunk.dae"
           }
           Solid {
             children [
@@ -103,7 +103,7 @@ PROTO AliengoZ1 [
                   rotation 1.000000 0.000000 0.000000 3.141593
                   children [
                     DEF hip_visual CadShape {
-                      url "/home/zishang/URDF/unitree/robots/aliengoZ1_description/meshes/hip.dae"
+                      url "../protos/aliengoZ1_description/meshes/hip.dae"
                     }
                   ]
                 }
@@ -126,7 +126,7 @@ PROTO AliengoZ1 [
                     translation 0.000000 -0.086800 0.000000
                     children [
                       DEF thigh_mirror_visual CadShape {
-                        url "/home/zishang/URDF/unitree/robots/aliengoZ1_description/meshes/thigh_mirror.dae"
+                        url "../protos/aliengoZ1_description/meshes/thigh_mirror.dae"
                       }
                       HingeJoint {
                         jointParameters HingeJointParameters {
@@ -151,7 +151,7 @@ PROTO AliengoZ1 [
                           rotation 0.000000 -1.000000 0.000000 1.710423
                           children [
                             DEF calf_visual CadShape {
-                              url "/home/zishang/URDF/unitree/robots/aliengoZ1_description/meshes/calf.dae"
+                              url "../protos/aliengoZ1_description/meshes/calf.dae"
                             }
                             Solid {
                               translation 0.000000 0.000000 -0.250000
@@ -395,7 +395,7 @@ PROTO AliengoZ1 [
                     translation 0.000000 0.086800 0.000000
                     children [
                       DEF thigh_visual CadShape {
-                        url "/home/zishang/URDF/unitree/robots/aliengoZ1_description/meshes/thigh.dae"
+                        url "../protos/aliengoZ1_description/meshes/thigh.dae"
                       }
                       HingeJoint {
                         jointParameters HingeJointParameters {
@@ -1155,7 +1155,7 @@ PROTO AliengoZ1 [
             translation 0.253500 0.000000 0.056000
             children [
               DEF z1_Link00_visual CadShape {
-                url "/home/zishang/URDF/unitree/robots/aliengoZ1_description/meshes/visual/z1_Link00.dae"
+                url "../protos/aliengoZ1_description/meshes/visual/z1_Link00.dae"
               }
               HingeJoint {
                 jointParameters HingeJointParameters {
@@ -1180,7 +1180,7 @@ PROTO AliengoZ1 [
                   translation 0.000000 0.000000 0.058500
                   children [
                     DEF z1_Link01_visual CadShape {
-                      url "/home/zishang/URDF/unitree/robots/aliengoZ1_description/meshes/visual/z1_Link01.dae"
+                      url "../protos/aliengoZ1_description/meshes/visual/z1_Link01.dae"
                     }
                     HingeJoint {
                       jointParameters HingeJointParameters {
@@ -1204,7 +1204,7 @@ PROTO AliengoZ1 [
                         translation 0.000000 0.000000 0.045000
                         children [
                           DEF z1_Link02_visual CadShape {
-                            url "/home/zishang/URDF/unitree/robots/aliengoZ1_description/meshes/visual/z1_Link02.dae"
+                            url "../protos/aliengoZ1_description/meshes/visual/z1_Link02.dae"
                           }
                           HingeJoint {
                             jointParameters HingeJointParameters {
@@ -1228,7 +1228,7 @@ PROTO AliengoZ1 [
                               translation -0.350000 0.000000 0.000000
                               children [
                                 DEF z1_Link03_visual CadShape {
-                                  url "/home/zishang/URDF/unitree/robots/aliengoZ1_description/meshes/visual/z1_Link03.dae"
+                                  url "../protos/aliengoZ1_description/meshes/visual/z1_Link03.dae"
                                 }
                                 HingeJoint {
                                   jointParameters HingeJointParameters {
@@ -1253,7 +1253,7 @@ PROTO AliengoZ1 [
                                     translation 0.218000 0.000000 0.057000
                                     children [
                                       DEF z1_Link04_visual CadShape {
-                                        url "/home/zishang/URDF/unitree/robots/aliengoZ1_description/meshes/visual/z1_Link04.dae"
+                                        url "../protos/aliengoZ1_description/meshes/visual/z1_Link04.dae"
                                       }
                                       HingeJoint {
                                         jointParameters HingeJointParameters {
@@ -1278,7 +1278,7 @@ PROTO AliengoZ1 [
                                           translation 0.070000 0.000000 0.000000
                                           children [
                                             DEF z1_Link05_visual CadShape {
-                                              url "/home/zishang/URDF/unitree/robots/aliengoZ1_description/meshes/visual/z1_Link05.dae"
+                                              url "../protos/aliengoZ1_description/meshes/visual/z1_Link05.dae"
                                             }
                                             HingeJoint {
                                               jointParameters HingeJointParameters {
@@ -1302,13 +1302,13 @@ PROTO AliengoZ1 [
                                                 translation 0.049200 0.000000 0.000000
                                                 children [
                                                   DEF z1_Link06_visual CadShape {
-                                                    url "/home/zishang/URDF/unitree/robots/aliengoZ1_description/meshes/visual/z1_Link06.dae"
+                                                    url "../protos/aliengoZ1_description/meshes/visual/z1_Link06.dae"
                                                   }
                                                   Solid {
                                                     translation 0.051000 0.000000 0.000000
                                                     children [
                                                       DEF z1_GripperStator_visual CadShape {
-                                                        url "/home/zishang/URDF/unitree/robots/aliengoZ1_description/meshes/visual/z1_GripperStator.dae"
+                                                        url "../protos/aliengoZ1_description/meshes/visual/z1_GripperStator.dae"
                                                       }
                                                       HingeJoint {
                                                         jointParameters HingeJointParameters {
@@ -1332,12 +1332,12 @@ PROTO AliengoZ1 [
                                                           translation 0.049000 0.000000 0.000000
                                                           children [
                                                             DEF z1_GripperMover_visual CadShape {
-                                                              url "/home/zishang/URDF/unitree/robots/aliengoZ1_description/meshes/visual/z1_GripperMover.dae"
+                                                              url "../protos/aliengoZ1_description/meshes/visual/z1_GripperMover.dae"
                                                             }
                                                           ]
                                                           name "gripperMover"
                                                           boundingObject DEF z1_GripperMover Mesh {
-                                                            url "/home/zishang/URDF/unitree/robots/aliengoZ1_description/meshes/collision/z1_GripperMover.STL"
+                                                            url "../protos/aliengoZ1_description/meshes/collision/z1_GripperMover.STL"
                                                           }
                                                           physics Physics {
                                                             density -1
@@ -1353,7 +1353,7 @@ PROTO AliengoZ1 [
                                                     ]
                                                     name "gripperStator"
                                                     boundingObject DEF z1_GripperStator Mesh {
-                                                      url "/home/zishang/URDF/unitree/robots/aliengoZ1_description/meshes/collision/z1_GripperStator.STL"
+                                                      url "../protos/aliengoZ1_description/meshes/collision/z1_GripperStator.STL"
                                                     }
                                                     physics Physics {
                                                       density -1
