@@ -1,0 +1,358 @@
+#VRML_SIM R2025a utf8
+# license: Apache License 2.0
+# license url: http://www.apache.org/licenses/LICENSE-2.0
+# This is a proto file for Webots for the X5A
+# Extracted from: ../urdf/X5A_no_collision.urdf
+
+PROTO X5A [
+  field  SFVec3f     translation     0 0 0
+  field  SFRotation  rotation        0 0 1 0
+  field  SFString    name            "X5A"  # Is `Robot.name`.
+  field  SFString    controller      "void" # Is `Robot.controller`.
+  field  MFString    controllerArgs  []     # Is `Robot.controllerArgs`.
+  field  SFString    customData      ""     # Is `Robot.customData`.
+  field  SFBool      supervisor      FALSE  # Is `Robot.supervisor`.
+  field  SFBool      synchronization TRUE   # Is `Robot.synchronization`.
+  field  SFBool      selfCollision   FALSE  # Is `Robot.selfCollision`.
+]
+{
+  Robot {
+    translation IS translation
+    rotation IS rotation
+    controller IS controller
+    controllerArgs IS controllerArgs
+    customData IS customData
+    supervisor IS supervisor
+    synchronization IS synchronization
+    selfCollision IS selfCollision
+    children [
+      Shape {
+        appearance DEF base_link_material PBRAppearance {
+          baseColor 0.752940 0.752940 0.752940
+          roughness 1.000000
+          metalness 0
+        }
+        geometry DEF base_link Mesh {
+          url "./meshes/base_link.STL"
+        }
+      }
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          axis 0.000000 0.000000 1.000000
+          anchor 0.000000 0.000000 0.060500
+        }
+        device [
+          RotationalMotor {
+            name "joint1"
+            maxVelocity 1000.0
+            minPosition -10.0
+            maxPosition 10.0
+            maxTorque 100.0
+          }
+          PositionSensor {
+            name "joint1_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation 0.000000 0.000000 0.060500
+          children [
+            Shape {
+              appearance DEF link1_material PBRAppearance {
+                baseColor 0.792160 0.819610 0.933330
+                roughness 1.000000
+                metalness 0
+              }
+              geometry DEF link1 Mesh {
+                url "./meshes/link1.STL"
+              }
+            }
+            HingeJoint {
+              jointParameters HingeJointParameters {
+                axis 0.000000 1.000000 0.000000
+                anchor 0.020000 0.000000 0.040000
+              }
+              device [
+                RotationalMotor {
+                  name "joint2"
+                  maxVelocity 1000.0
+                  minPosition -10.0
+                  maxPosition 10.0
+                  maxTorque 100.0
+                }
+                PositionSensor {
+                  name "joint2_sensor"
+                }
+              ]
+              endPoint Solid {
+                translation 0.020000 0.000000 0.040000
+                children [
+                  Shape {
+                    appearance DEF link2_material PBRAppearance {
+                      baseColor 0.752940 0.752940 0.752940
+                      roughness 1.000000
+                      metalness 0
+                    }
+                    geometry DEF link2 Mesh {
+                      url "./meshes/link2.STL"
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0.000000 -1.000000 -0.000007
+                      anchor -0.264000 0.000000 0.000000
+                    }
+                    device [
+                      RotationalMotor {
+                        name "joint3"
+                        maxVelocity 1000.0
+                        minPosition -10.0
+                        maxPosition 10.0
+                        maxTorque 100.0
+                      }
+                      PositionSensor {
+                        name "joint3_sensor"
+                      }
+                    ]
+                    endPoint Solid {
+                      translation -0.264000 0.000000 0.000000
+                      rotation 1.000000 0.000000 -0.000000 3.141600
+                      children [
+                        Shape {
+                          appearance DEF link3_material PBRAppearance {
+                            baseColor 1.000000 0.984310 0.964710
+                            roughness 1.000000
+                            metalness 0
+                          }
+                          geometry DEF link3 Mesh {
+                            url "./meshes/link3.STL"
+                          }
+                        }
+                        HingeJoint {
+                          jointParameters HingeJointParameters {
+                            axis 0.000000 1.000000 0.000000
+                            anchor 0.245000 0.000000 -0.056000
+                          }
+                          device [
+                            RotationalMotor {
+                              name "joint4"
+                              maxVelocity 1000.0
+                              minPosition -10.0
+                              maxPosition 10.0
+                              maxTorque 100.0
+                            }
+                            PositionSensor {
+                              name "joint4_sensor"
+                            }
+                          ]
+                          endPoint Solid {
+                            translation 0.245000 0.000000 -0.056000
+                            children [
+                              Shape {
+                                appearance DEF link4_material PBRAppearance {
+                                  baseColor 0.792160 0.819610 0.929410
+                                  roughness 1.000000
+                                  metalness 0
+                                }
+                                geometry DEF link4 Mesh {
+                                  url "./meshes/link4.STL"
+                                }
+                              }
+                              HingeJoint {
+                                jointParameters HingeJointParameters {
+                                  axis 0.000000 0.000000 1.000000
+                                  anchor 0.067750 0.000500 -0.086500
+                                }
+                                device [
+                                  RotationalMotor {
+                                    name "joint5"
+                                    maxVelocity 1000.0
+                                    minPosition -10.0
+                                    maxPosition 10.0
+                                    maxTorque 100.0
+                                  }
+                                  PositionSensor {
+                                    name "joint5_sensor"
+                                  }
+                                ]
+                                endPoint Solid {
+                                  translation 0.067750 0.000500 -0.086500
+                                  children [
+                                    Shape {
+                                      appearance DEF link5_material PBRAppearance {
+                                        baseColor 0.698040 0.698040 0.698040
+                                        roughness 1.000000
+                                        metalness 0
+                                      }
+                                      geometry DEF link5 Mesh {
+                                        url "./meshes/link5.STL"
+                                      }
+                                    }
+                                    HingeJoint {
+                                      jointParameters HingeJointParameters {
+                                        anchor 0.028950 0.000000 0.086500
+                                      }
+                                      device [
+                                        RotationalMotor {
+                                          name "joint6"
+                                          maxVelocity 1000.0
+                                          minPosition -10.0
+                                          maxPosition 10.0
+                                          maxTorque 100.0
+                                        }
+                                        PositionSensor {
+                                          name "joint6_sensor"
+                                        }
+                                      ]
+                                      endPoint Solid {
+                                        translation 0.028950 0.000000 0.086500
+                                        rotation -1.000000 -0.000000 0.000000 3.141600
+                                        children [
+                                          Shape {
+                                            appearance DEF link6_material PBRAppearance {
+                                              baseColor 0.898040 0.917650 0.929410
+                                              roughness 1.000000
+                                              metalness 0
+                                            }
+                                            geometry DEF link6 Mesh {
+                                              url "./meshes/link6.STL"
+                                            }
+                                          }
+                                          Solid {
+                                            translation 0.086570 0.024896 -0.000244
+                                            children [
+                                              Shape {
+                                                appearance DEF link7_material PBRAppearance {
+                                                  roughness 1.000000
+                                                  metalness 0
+                                                }
+                                                geometry DEF link7 Mesh {
+                                                  url "./meshes/link7.STL"
+                                                }
+                                              }
+                                            ]
+                                            name "link7"
+                                            physics Physics {
+                                              density -1
+                                              mass 0.064798
+                                              centerOfMass [ -0.000355 -0.007827 -0.002988 ]
+                                              inertiaMatrix [
+                                                2.000000e-05 3.000000e-05 3.000000e-05
+                                                0.000000e+00 0.000000e+00 0.000000e+00
+                                              ]
+                                            }
+                                          }
+                                          Solid {
+                                            translation 0.086570 -0.024900 -0.000244
+                                            children [
+                                              Shape {
+                                                appearance DEF link8_material PBRAppearance {
+                                                  roughness 1.000000
+                                                  metalness 0
+                                                }
+                                                geometry DEF link8 Mesh {
+                                                  url "./meshes/link8.STL"
+                                                }
+                                              }
+                                            ]
+                                            name "link8"
+                                            physics Physics {
+                                              density -1
+                                              mass 0.064798
+                                              centerOfMass [ -0.000355 0.007828 0.002420 ]
+                                              inertiaMatrix [
+                                                2.000000e-05 3.000000e-05 3.000000e-05
+                                                0.000000e+00 0.000000e+00 0.000000e+00
+                                              ]
+                                            }
+                                          }
+                                        ]
+                                        name "link6"
+                                        physics Physics {
+                                          density -1
+                                          mass 0.440890
+                                          centerOfMass [ 0.041697 0.000024 0.000145 ]
+                                          inertiaMatrix [
+                                            3.800000e-04 2.800000e-04 5.000000e-04
+                                            0.000000e+00 0.000000e+00 0.000000e+00
+                                          ]
+                                        }
+                                      }
+                                    }
+                                  ]
+                                  name "link5"
+                                  physics Physics {
+                                    density -1
+                                    mass 0.634880
+                                    centerOfMass [ 0.003612 -0.000015 0.055214 ]
+                                    inertiaMatrix [
+                                      8.300000e-04 8.200000e-04 2.600000e-04
+                                      0.000000e+00 7.000000e-05 0.000000e+00
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                            name "link4"
+                            physics Physics {
+                              density -1
+                              mass 0.117140
+                              centerOfMass [ 0.040231 0.004481 -0.035335 ]
+                              inertiaMatrix [
+                                1.900000e-04 2.300000e-04 1.400000e-04
+                                -2.000000e-05 -9.000000e-05 2.000000e-05
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                      name "link3"
+                      physics Physics {
+                        density -1
+                        mass 0.545340
+                        centerOfMass [ 0.185310 0.000684 -0.051638 ]
+                        inertiaMatrix [
+                          3.600000e-04 4.230000e-03 4.200000e-03
+                          -3.000000e-05 -3.900000e-04 1.000000e-05
+                        ]
+                      }
+                    }
+                  }
+                ]
+                name "link2"
+                physics Physics {
+                  density -1
+                  mass 1.079500
+                  centerOfMass [ -0.132370 0.002085 0.000105 ]
+                  inertiaMatrix [
+                    5.100000e-04 1.599000e-02 1.605000e-02
+                    1.000000e-05 -4.000000e-05 0.000000e+00
+                  ]
+                }
+              }
+            }
+          ]
+          name "link1"
+          physics Physics {
+            density -1
+            mass 0.066982
+            centerOfMass [ 0.005423 -0.008029 0.017086 ]
+            inertiaMatrix [
+              8.000000e-05 3.000000e-05 8.000000e-05
+              0.000000e+00 1.000000e-05 0.000000e+00
+            ]
+          }
+        }
+      }
+    ]
+    name IS name
+    physics Physics {
+      density -1
+      mass 0.439950
+      centerOfMass [ -0.000030 0.000031 0.027324 ]
+      inertiaMatrix [
+        1.700000e-04 1.700000e-04 1.600000e-04
+        0.000000e+00 0.000000e+00 0.000000e+00
+      ]
+    }
+  }
+}
