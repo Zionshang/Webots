@@ -6,11 +6,10 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/project
 
 WorldInfo {
   basicTimeStep 1
-  FPS 30
 }
 Viewpoint {
-  orientation 0.13227505678807336 0.05943802887911252 -0.9894293456708657 2.304859811524468
-  position 1.1935857641304262 1.3364173922692808 0.768758671786433
+  orientation 0.1320499919092997 0.0832151022707039 -0.9877439174152531 2.0280366569112727
+  position 0.7917113731100606 1.7277724510338253 0.8363196549010631
 }
 TexturedBackground {
 }
@@ -19,10 +18,24 @@ TexturedBackgroundLight {
 RectangleArena {
   floorSize 10 10
 }
-Robot {
-  translation 6.70967421155591e-05 -3.919625858653068e-05 0.39978751012384084
-  rotation 0.547618300115578 -0.7789661238756975 -0.305493003573889 0.00013715441212921832
+DEF GalileoMiniDescription Robot {
+  translation 6.040301819094929e-05 -3.9197696322384665e-05 0.3997822963711193
+  rotation 0.5449710058646879 -0.7824212262362052 -0.3013695862257223 0.0001383575840168369
   children [
+    Solid {
+      children [
+        Gyro {
+        }
+        InertialUnit {
+          name "imu"
+        }
+      ]
+      name "imu_link"
+      physics Physics {
+        density -1
+        mass 0.001
+      }
+    }
     Shape {
       appearance DEF base_link_material PBRAppearance {
         baseColor 0.75294 0.75294 0.75294
@@ -37,7 +50,7 @@ Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position 1.432052629216522e-05
+        position 2.1483783579193593e-05
         anchor 0.2015 0.08 0
       }
       device [
@@ -54,7 +67,7 @@ Robot {
       ]
       endPoint Solid {
         translation 0.2015 0.08 0
-        rotation 1 0 0 1.4320535345243767e-05
+        rotation 1 0 0 2.1483774667004973e-05
         children [
           Shape {
             appearance DEF FL_abd_link_material PBRAppearance {
@@ -70,7 +83,7 @@ Robot {
           }
           HingeJoint {
             jointParameters HingeJointParameters {
-              position 0.7199917769256402
+              position 0.7199876628404016
               axis 0 1 0
               anchor 0.1 0.1065 0
             }
@@ -88,7 +101,7 @@ Robot {
             ]
             endPoint Solid {
               translation 0.1 0.1065 0
-              rotation 0 1 0 0.7199917769256401
+              rotation 0 1 0 0.7199876628404014
               children [
                 Shape {
                   appearance DEF FL_hip_link_material PBRAppearance {
@@ -104,7 +117,7 @@ Robot {
                 }
                 HingeJoint {
                   jointParameters HingeJointParameters {
-                    position -1.4400377615781008
+                    position -1.440056607539892
                     axis 0 1 0
                     anchor 0 0 -0.26
                   }
@@ -122,7 +135,7 @@ Robot {
                   ]
                   endPoint Solid {
                     translation 0 0 -0.26
-                    rotation 0 -0.9999999999999999 0 1.4400377615781008
+                    rotation 0 -1 0 1.440056607539892
                     children [
                       Shape {
                         appearance DEF FL_knee_link_material PBRAppearance {
@@ -239,7 +252,7 @@ Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position -1.651966845717112e-05
+        position -2.4775698855172834e-05
         anchor 0.2015 -0.08 0
       }
       device [
@@ -256,7 +269,7 @@ Robot {
       ]
       endPoint Solid {
         translation 0.2015 -0.08 0
-        rotation -1 0 0 1.6519656070976567e-05
+        rotation -0.9999999999999999 0 0 2.4775697868995362e-05
         children [
           Shape {
             appearance DEF FR_abd_link_material PBRAppearance {
@@ -272,7 +285,7 @@ Robot {
           }
           HingeJoint {
             jointParameters HingeJointParameters {
-              position 0.7199915322692014
+              position 0.7199872975412298
               axis 0 1 0
               anchor 0.1 -0.10685 0
             }
@@ -290,7 +303,7 @@ Robot {
             ]
             endPoint Solid {
               translation 0.1 -0.10685 0
-              rotation 0 1 0 0.7199915322692015
+              rotation 0 1 0 0.7199872975412296
               children [
                 Shape {
                   appearance DEF FR_hip_link_material PBRAppearance {
@@ -306,7 +319,7 @@ Robot {
                 }
                 HingeJoint {
                   jointParameters HingeJointParameters {
-                    position -1.4400398667963352
+                    position -1.4400597527804133
                     axis 0 1 0
                     anchor 0 0 -0.26
                   }
@@ -324,7 +337,7 @@ Robot {
                   ]
                   endPoint Solid {
                     translation 0 0 -0.26
-                    rotation 0 -1 0 1.4400398667963352
+                    rotation 0 -0.9999999999999999 0 1.4400597527804133
                     children [
                       Shape {
                         appearance DEF FR_knee_link_material PBRAppearance {
@@ -441,7 +454,7 @@ Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position -1.883844668082446e-05
+        position -2.8261470186308202e-05
         anchor -0.2015 -0.08 0
       }
       device [
@@ -458,7 +471,7 @@ Robot {
       ]
       endPoint Solid {
         translation -0.2015 -0.08 0
-        rotation -1 0 0 1.8838439070871656e-05
+        rotation -0.9999999999999999 0 0 2.8261465481113726e-05
         children [
           Shape {
             appearance DEF HR_abd_link_material PBRAppearance {
@@ -474,7 +487,7 @@ Robot {
           }
           HingeJoint {
             jointParameters HingeJointParameters {
-              position 0.7199908935659618
+              position 0.7199863394342119
               axis 0 1 0
               anchor -0.1 -0.10685 0
             }
@@ -492,7 +505,7 @@ Robot {
             ]
             endPoint Solid {
               translation -0.1 -0.10685 0
-              rotation 0 1 0 0.7199908935659618
+              rotation 0 0.9999999999999999 0 0.7199863394342121
               children [
                 Shape {
                   appearance DEF HR_hip_link_material PBRAppearance {
@@ -508,7 +521,7 @@ Robot {
                 }
                 HingeJoint {
                   jointParameters HingeJointParameters {
-                    position -1.4400447020024356
+                    position -1.4400670195055423
                     axis 0 1 0
                     anchor 0 0 -0.26
                   }
@@ -526,7 +539,7 @@ Robot {
                   ]
                   endPoint Solid {
                     translation 0 0 -0.26
-                    rotation 0 -1 0 1.4400447020024356
+                    rotation 0 -1 0 1.440067019505542
                     children [
                       Shape {
                         appearance DEF HR_knee_link_material PBRAppearance {
@@ -643,7 +656,7 @@ Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position 1.871637970910876e-05
+        position 2.8071580683994263e-05
         anchor -0.2015 0.08 0
       }
       device [
@@ -660,7 +673,7 @@ Robot {
       ]
       endPoint Solid {
         translation -0.2015 0.08 0
-        rotation 1 0 0 1.8716380467462296e-05
+        rotation 1 0 0 2.8071572992138518e-05
         children [
           Shape {
             appearance DEF HL_abd_link_material PBRAppearance {
@@ -676,7 +689,7 @@ Robot {
           }
           HingeJoint {
             jointParameters HingeJointParameters {
-              position 0.7199907003753243
+              position 0.7199860511868208
               axis 0 1 0
               anchor -0.1 0.1065 0
             }
@@ -694,7 +707,7 @@ Robot {
             ]
             endPoint Solid {
               translation -0.1 0.1065 0
-              rotation 0 0.9999999999999999 0 0.7199907003753245
+              rotation 0 1 0 0.719986051186821
               children [
                 Shape {
                   appearance DEF HL_hip_link_material PBRAppearance {
@@ -710,7 +723,7 @@ Robot {
                 }
                 HingeJoint {
                   jointParameters HingeJointParameters {
-                    position -1.4400458998197405
+                    position -1.44006880374454
                     axis 0 1 0
                     anchor 6.3e-05 0 -0.26
                   }
@@ -728,7 +741,7 @@ Robot {
                   ]
                   endPoint Solid {
                     translation 6.3e-05 0 -0.26
-                    rotation 0 -1 0 1.4400458998197403
+                    rotation 0 -0.9999999999999999 0 1.44006880374454
                     children [
                       Shape {
                         appearance DEF HL_knee_link_material PBRAppearance {
@@ -859,4 +872,6 @@ Robot {
       0.001924 0.001299 0.002595
     ]
   }
+  controller "<extern>"
+  supervisor TRUE
 }
