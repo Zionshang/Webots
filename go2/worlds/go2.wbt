@@ -5,10 +5,11 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/project
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
 
 WorldInfo {
+  basicTimeStep 1
 }
 Viewpoint {
-  orientation 0.1890535218127717 -0.0456632154752458 -0.9809044992468173 3.606846035419552
-  position 1.493532453956897 -0.8417579622612441 0.8235192895301332
+  orientation 0.15915609155323063 0.08346659461384413 -0.9837187942217369 2.1890114162729435
+  position 1.0970969650446334 1.4924560281710075 0.7584482270482089
 }
 TexturedBackground {
 }
@@ -957,6 +958,14 @@ DEF go2 Robot {
     }
     Solid {
       translation -0.02557 0 0.04232
+      children [
+        InertialUnit {
+        }
+        Accelerometer {
+        }
+        Gyro {
+        }
+      ]
       name "imu"
       physics Physics {
         density -1
@@ -1002,4 +1011,6 @@ DEF go2 Robot {
       0.00012166 0.0014849 -3.12e-05
     ]
   }
+  controller "<extern>"
+  supervisor TRUE
 }
