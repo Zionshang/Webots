@@ -1,0 +1,1125 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/Grass.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/apartment_structure/protos/Door.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/chairs/protos/OfficeChair.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/pallet/protos/WoodenPallet.proto"
+
+WorldInfo {
+  basicTimeStep 1
+}
+Viewpoint {
+  orientation 0.11425628180053679 0.06828431663735059 -0.9911017879968165 2.0720557589436233
+  position 1.8923583543481177 3.4948350224868134 1.2097283511955614
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 100 100
+  floorAppearance Grass {
+  }
+}
+DEF bqr3_arm Robot {
+  translation 0 0 0.57
+  children [
+    Solid {
+      children [
+        Accelerometer {
+          name "imu_link_accelerometer"
+        }
+        Gyro {
+          name "imu_link_gyro"
+        }
+        InertialUnit {
+          name "imu_link_imu"
+        }
+      ]
+      physics Physics {
+        density -1
+        mass 0.001
+      }
+    }
+    Shape {
+      appearance DEF base_link_material PBRAppearance {
+        baseColor 0.79216 0.81961 0.93333
+        roughness 1
+        metalness 0
+      }
+      geometry DEF base_link Mesh {
+        url [
+          "/home/zishang/ros2_workspace/robot_description/install/bqr3_description/share/bqr3_description/meshes/base_link.STL"
+        ]
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        anchor 0.244 -0.115 0
+      }
+      device [
+        RotationalMotor {
+          name "FR_abd_joint"
+          minPosition -3.14
+          maxPosition 3.14
+          maxTorque 300
+        }
+        PositionSensor {
+          name "FR_abd_joint_sensor"
+        }
+      ]
+      endPoint Solid {
+        translation 0.244 -0.115 0
+        rotation 1 0 0 0
+        children [
+          Shape {
+            appearance DEF FR_abd_link_material PBRAppearance {
+              baseColor 0.89804 0.91765 0.92941
+              roughness 1
+              metalness 0
+            }
+            geometry DEF FR_abd_link Mesh {
+              url [
+                "/home/zishang/ros2_workspace/robot_description/install/bqr3_description/share/bqr3_description/meshes/FR_abd_link.STL"
+              ]
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              position 0.72
+              axis 0 1 0
+              anchor 0.056 0.018587 0
+            }
+            device [
+              RotationalMotor {
+                name "FR_hip_joint"
+                minPosition -3.14
+                maxPosition 3.14
+                maxTorque 300
+              }
+              PositionSensor {
+                name "FR_hip_joint_sensor"
+              }
+            ]
+            endPoint Solid {
+              translation 0.056 0.018587 0
+              rotation 0 1 0 0.7200000000000003
+              children [
+                Shape {
+                  appearance DEF FR_hip_link_material PBRAppearance {
+                    baseColor 0.79216 0.81961 0.93333
+                    roughness 1
+                    metalness 0
+                  }
+                  geometry DEF FR_hip_link Mesh {
+                    url [
+                      "/home/zishang/ros2_workspace/robot_description/install/bqr3_description/share/bqr3_description/meshes/FR_hip_link.STL"
+                    ]
+                  }
+                }
+                HingeJoint {
+                  jointParameters HingeJointParameters {
+                    position -1.44
+                    axis 0 1 0
+                    anchor 0 -0.10009 -0.36
+                  }
+                  device [
+                    RotationalMotor {
+                      name "FR_knee_joint"
+                      minPosition -3.14
+                      maxPosition 3.14
+                      maxTorque 300
+                    }
+                    PositionSensor {
+                      name "FR_knee_joint_sensor"
+                    }
+                  ]
+                  endPoint Solid {
+                    translation 0 -0.10009 -0.36
+                    rotation 0 -1 0 1.4399999999999997
+                    children [
+                      Shape {
+                        appearance DEF FR_knee_link_material PBRAppearance {
+                          baseColor 0.898039 0.917647 0.929412
+                          roughness 1
+                          metalness 0
+                        }
+                        geometry DEF FR_knee_link Mesh {
+                          url [
+                            "/home/zishang/ros2_workspace/robot_description/install/bqr3_description/share/bqr3_description/meshes/FR_knee_link.STL"
+                          ]
+                        }
+                      }
+                      Solid {
+                        translation -0.000548 0 -0.36
+                        children [
+                          Shape {
+                            appearance DEF FR_foot_link_material PBRAppearance {
+                              roughness 1
+                              metalness 0
+                            }
+                            geometry DEF FR_foot_link Mesh {
+                              url [
+                                "/home/zishang/ros2_workspace/robot_description/install/bqr3_description/share/bqr3_description/meshes/FR_foot_link.STL"
+                              ]
+                            }
+                          }
+                        ]
+                        name "FR_foot_link"
+                        boundingObject Sphere {
+                          radius 0.03
+                        }
+                        physics Physics {
+                          density -1
+                          mass 0.10321
+                          centerOfMass [
+                            0.001179 -0.000301 -0.002438
+                          ]
+                          inertiaMatrix [
+                            2.9572e-05 3.5401e-05 2.9167e-05
+                            3.6317e-09 6.7484e-07 -9.1467e-09
+                          ]
+                        }
+                      }
+                    ]
+                    name "FR_knee_link"
+                    boundingObject USE FR_knee_link
+                    physics Physics {
+                      density -1
+                      mass 0.6489
+                      centerOfMass [
+                        -0.00517 0 -0.12521
+                      ]
+                      inertiaMatrix [
+                        0.006478288 0.006528945 0.00013568
+                        2.4e-10 -0.00013 -1.015e-08
+                      ]
+                    }
+                  }
+                }
+              ]
+              name "FR_hip_link"
+              boundingObject USE FR_hip_link
+              physics Physics {
+                density -1
+                mass 1.337
+                centerOfMass [
+                  -0.00063 -0.0201 -0.15827
+                ]
+                inertiaMatrix [
+                  0.01881681 0.01886442 0.000837451
+                  -3.29929e-05 0.000792 0.000185
+                ]
+              }
+            }
+          }
+        ]
+        name "FR_abd_link"
+        boundingObject USE FR_abd_link
+        physics Physics {
+          density -1
+          mass 1.656
+          centerOfMass [
+            0.05057 0.046892 1e-06
+          ]
+          inertiaMatrix [
+            0.002476692 0.002206021 0.002653852
+            0.000400827 3e-09 -5.9e-08
+          ]
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        anchor -0.244 -0.115 0
+      }
+      device [
+        RotationalMotor {
+          name "HR_abd_joint"
+          minPosition -3.14
+          maxPosition 3.14
+          maxTorque 300
+        }
+        PositionSensor {
+          name "HR_abd_joint_sensor"
+        }
+      ]
+      endPoint Solid {
+        translation -0.244 -0.115 0
+        rotation 1 0 0 0
+        children [
+          Shape {
+            appearance DEF HR_abd_link_material PBRAppearance {
+              baseColor 0.89804 0.91765 0.92941
+              roughness 1
+              metalness 0
+            }
+            geometry DEF HR_abd_link Mesh {
+              url [
+                "/home/zishang/ros2_workspace/robot_description/install/bqr3_description/share/bqr3_description/meshes/HR_abd_link.STL"
+              ]
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              position 0.72
+              axis 0 1 0
+              anchor -0.056 0.018587 0
+            }
+            device [
+              RotationalMotor {
+                name "HR_hip_joint"
+                minPosition -3.14
+                maxPosition 3.14
+                maxTorque 300
+              }
+              PositionSensor {
+                name "HR_hip_joint_sensor"
+              }
+            ]
+            endPoint Solid {
+              translation -0.056 0.018587 0
+              rotation 0 1 0 0.7200000000000003
+              children [
+                Shape {
+                  appearance DEF HR_hip_link_material PBRAppearance {
+                    baseColor 0.79216 0.81961 0.93333
+                    roughness 1
+                    metalness 0
+                  }
+                  geometry DEF HR_hip_link Mesh {
+                    url [
+                      "/home/zishang/ros2_workspace/robot_description/install/bqr3_description/share/bqr3_description/meshes/HR_hip_link.STL"
+                    ]
+                  }
+                }
+                HingeJoint {
+                  jointParameters HingeJointParameters {
+                    position -1.44
+                    axis 0 1 0
+                    anchor 0 -0.10009 -0.36
+                  }
+                  device [
+                    RotationalMotor {
+                      name "HR_knee_joint"
+                      minPosition -3.14
+                      maxPosition 3.14
+                      maxTorque 300
+                    }
+                    PositionSensor {
+                      name "HR_knee_joint_sensor"
+                    }
+                  ]
+                  endPoint Solid {
+                    translation 0 -0.10009 -0.36
+                    rotation 0 -1 0 1.4399999999999997
+                    children [
+                      Shape {
+                        appearance DEF HR_knee_link_material PBRAppearance {
+                          baseColor 0.89804 0.91765 0.92941
+                          roughness 1
+                          metalness 0
+                        }
+                        geometry DEF HR_knee_link Mesh {
+                          url [
+                            "/home/zishang/ros2_workspace/robot_description/install/bqr3_description/share/bqr3_description/meshes/HR_knee_link.STL"
+                          ]
+                        }
+                      }
+                      Solid {
+                        translation -0.000548 0 -0.36
+                        children [
+                          Shape {
+                            appearance DEF HR_foot_link_material PBRAppearance {
+                              roughness 1
+                              metalness 0
+                            }
+                            geometry DEF HR_foot_link Mesh {
+                              url [
+                                "/home/zishang/ros2_workspace/robot_description/install/bqr3_description/share/bqr3_description/meshes/HR_foot_link.STL"
+                              ]
+                            }
+                          }
+                        ]
+                        name "HR_foot_link"
+                        boundingObject Sphere {
+                          radius 0.03
+                        }
+                        physics Physics {
+                          density -1
+                          mass 0.10321
+                          centerOfMass [
+                            0.001179 -0.000301 -0.002438
+                          ]
+                          inertiaMatrix [
+                            2.9572e-05 3.5401e-05 2.9167e-05
+                            3.6261e-09 6.7484e-07 -9.1442e-09
+                          ]
+                        }
+                      }
+                    ]
+                    name "HR_knee_link"
+                    boundingObject USE HR_knee_link
+                    physics Physics {
+                      density -1
+                      mass 0.6489
+                      centerOfMass [
+                        -0.00517 0 -0.12521
+                      ]
+                      inertiaMatrix [
+                        0.006478288 0.006528945 0.00013568
+                        2.4e-10 -0.00013 -1.015e-08
+                      ]
+                    }
+                  }
+                }
+              ]
+              name "HR_hip_link"
+              boundingObject USE HR_hip_link
+              physics Physics {
+                density -1
+                mass 1.337
+                centerOfMass [
+                  -0.00063 -0.0201 -0.15827
+                ]
+                inertiaMatrix [
+                  0.01881681 0.01886442 0.000837451
+                  -3.29929e-05 0.000792 0.000185
+                ]
+              }
+            }
+          }
+        ]
+        name "HR_abd_link"
+        boundingObject USE HR_abd_link
+        physics Physics {
+          density -1
+          mass 1.656
+          centerOfMass [
+            -0.05057 0.046982 -1e-06
+          ]
+          inertiaMatrix [
+            0.002476692 0.002206021 0.002653852
+            -0.000400827 3e-09 5.9e-08
+          ]
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        anchor 0.244 0.115 0
+      }
+      device [
+        RotationalMotor {
+          name "FL_abd_joint"
+          minPosition -3.14
+          maxPosition 3.14
+          maxTorque 300
+        }
+        PositionSensor {
+          name "FL_abd_joint_sensor"
+        }
+      ]
+      endPoint Solid {
+        translation 0.244 0.115 0
+        rotation 1 0 0 0
+        children [
+          Shape {
+            appearance DEF FL_abd_link_material PBRAppearance {
+              baseColor 0.89804 0.91765 0.92941
+              roughness 1
+              metalness 0
+            }
+            geometry DEF FL_abd_link Mesh {
+              url [
+                "/home/zishang/ros2_workspace/robot_description/install/bqr3_description/share/bqr3_description/meshes/FL_abd_link.STL"
+              ]
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              position 0.72
+              axis 0 1 0
+              anchor 0.056 -0.018587 0
+            }
+            device [
+              RotationalMotor {
+                name "FL_hip_joint"
+                minPosition -3.14
+                maxPosition 3.14
+                maxTorque 300
+              }
+              PositionSensor {
+                name "FL_hip_joint_sensor"
+              }
+            ]
+            endPoint Solid {
+              translation 0.056 -0.018587 0
+              rotation 0 1 0 0.7200000000000003
+              children [
+                Shape {
+                  appearance DEF FL_hip_link_material PBRAppearance {
+                    baseColor 0.79216 0.81961 0.93333
+                    roughness 1
+                    metalness 0
+                  }
+                  geometry DEF FL_hip_link Mesh {
+                    url [
+                      "/home/zishang/ros2_workspace/robot_description/install/bqr3_description/share/bqr3_description/meshes/FL_hip_link.STL"
+                    ]
+                  }
+                }
+                HingeJoint {
+                  jointParameters HingeJointParameters {
+                    position -1.44
+                    axis 0 1 0
+                    anchor 0 0.10009 -0.36
+                  }
+                  device [
+                    RotationalMotor {
+                      name "FL_knee_joint"
+                      minPosition -3.14
+                      maxPosition 3.14
+                      maxTorque 300
+                    }
+                    PositionSensor {
+                      name "FL_knee_joint_sensor"
+                    }
+                  ]
+                  endPoint Solid {
+                    translation 0 0.10009 -0.36
+                    rotation 0 -1 0 1.4399999999999997
+                    children [
+                      Shape {
+                        appearance DEF FL_knee_link_material PBRAppearance {
+                          baseColor 0.89804 0.91765 0.92941
+                          roughness 1
+                          metalness 0
+                        }
+                        geometry DEF FL_knee_link Mesh {
+                          url [
+                            "/home/zishang/ros2_workspace/robot_description/install/bqr3_description/share/bqr3_description/meshes/FL_knee_link.STL"
+                          ]
+                        }
+                      }
+                      Solid {
+                        translation -0.000548 0 -0.36
+                        children [
+                          Shape {
+                            appearance DEF FL_foot_link_material PBRAppearance {
+                              roughness 1
+                              metalness 0
+                            }
+                            geometry DEF FL_foot_link Mesh {
+                              url [
+                                "/home/zishang/ros2_workspace/robot_description/install/bqr3_description/share/bqr3_description/meshes/FL_foot_link.STL"
+                              ]
+                            }
+                          }
+                        ]
+                        name "FL_foot_link"
+                        boundingObject Sphere {
+                          radius 0.03
+                        }
+                        physics Physics {
+                          density -1
+                          mass 0.10321
+                          centerOfMass [
+                            0.001179 9.9e-05 -0.002438
+                          ]
+                          inertiaMatrix [
+                            2.9572e-05 3.5401e-05 2.9167e-05
+                            3.6295e-09 6.7484e-07 -9.1457e-09
+                          ]
+                        }
+                      }
+                    ]
+                    name "FL_knee_link"
+                    boundingObject USE FL_knee_link
+                    physics Physics {
+                      density -1
+                      mass 0.6489
+                      centerOfMass [
+                        -0.00517 0 -0.12521
+                      ]
+                      inertiaMatrix [
+                        0.006478288 0.006528945 0.00013568
+                        2.4e-10 -0.00013 -1.015e-08
+                      ]
+                    }
+                  }
+                }
+              ]
+              name "FL_hip_link"
+              boundingObject USE FL_hip_link
+              physics Physics {
+                density -1
+                mass 1.337
+                centerOfMass [
+                  -0.00063 0.0201 -0.15827
+                ]
+                inertiaMatrix [
+                  0.01881684 0.01886441 0.000837413
+                  -3.29964e-05 0.000792 0.000185353
+                ]
+              }
+            }
+          }
+        ]
+        name "FL_abd_link"
+        boundingObject USE FL_abd_link
+        physics Physics {
+          density -1
+          mass 1.656
+          centerOfMass [
+            0.05057 -0.046982 -1e-06
+          ]
+          inertiaMatrix [
+            0.002476692 0.002206021 0.002653852
+            -0.000400827 -3e-09 -5.9e-08
+          ]
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        anchor -0.244 0.115 0
+      }
+      device [
+        RotationalMotor {
+          name "HL_abd_joint"
+          minPosition -3.14
+          maxPosition 3.14
+          maxTorque 300
+        }
+        PositionSensor {
+          name "HL_abd_joint_sensor"
+        }
+      ]
+      endPoint Solid {
+        translation -0.244 0.115 0
+        rotation 1 0 0 0
+        children [
+          Shape {
+            appearance DEF HL_abd_link_material PBRAppearance {
+              baseColor 0.89804 0.91765 0.92941
+              roughness 1
+              metalness 0
+            }
+            geometry DEF HL_abd_link Mesh {
+              url [
+                "/home/zishang/ros2_workspace/robot_description/install/bqr3_description/share/bqr3_description/meshes/HL_abd_link.STL"
+              ]
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              position 0.72
+              axis 0 1 0
+              anchor -0.056 -0.018588 0
+            }
+            device [
+              RotationalMotor {
+                name "HL_hip_joint"
+                minPosition -3.14
+                maxPosition 3.14
+                maxTorque 300
+              }
+              PositionSensor {
+                name "HL_hip_joint_sensor"
+              }
+            ]
+            endPoint Solid {
+              translation -0.056 -0.018588 0
+              rotation 0 1 0 0.7200000000000003
+              children [
+                Shape {
+                  appearance DEF HL_hip_link_material PBRAppearance {
+                    baseColor 0.89804 0.91765 0.92941
+                    roughness 1
+                    metalness 0
+                  }
+                  geometry DEF HL_hip_link Mesh {
+                    url [
+                      "/home/zishang/ros2_workspace/robot_description/install/bqr3_description/share/bqr3_description/meshes/HL_hip_link.STL"
+                    ]
+                  }
+                }
+                HingeJoint {
+                  jointParameters HingeJointParameters {
+                    position -1.44
+                    axis 0 1 0
+                    anchor 0 0.10009 -0.36
+                  }
+                  device [
+                    RotationalMotor {
+                      name "HL_knee_joint"
+                      minPosition -3.14
+                      maxPosition 3.14
+                      maxTorque 300
+                    }
+                    PositionSensor {
+                      name "HL_knee_joint_sensor"
+                    }
+                  ]
+                  endPoint Solid {
+                    translation 0 0.10009 -0.36
+                    rotation 0 -1 0 1.4399999999999997
+                    children [
+                      Shape {
+                        appearance DEF HL_knee_link_material PBRAppearance {
+                          baseColor 0.89804 0.91765 0.92941
+                          roughness 1
+                          metalness 0
+                        }
+                        geometry DEF HL_knee_link Mesh {
+                          url [
+                            "/home/zishang/ros2_workspace/robot_description/install/bqr3_description/share/bqr3_description/meshes/HL_knee_link.STL"
+                          ]
+                        }
+                      }
+                      Solid {
+                        translation -0.000548 0 -0.36
+                        children [
+                          Shape {
+                            appearance DEF HL_foot_link_material PBRAppearance {
+                              roughness 1
+                              metalness 0
+                            }
+                            geometry DEF HL_foot_link Mesh {
+                              url [
+                                "/home/zishang/ros2_workspace/robot_description/install/bqr3_description/share/bqr3_description/meshes/HL_foot_link.STL"
+                              ]
+                            }
+                          }
+                        ]
+                        name "HL_foot_link"
+                        boundingObject Sphere {
+                          radius 0.03
+                        }
+                        physics Physics {
+                          density -1
+                          mass 0.10321
+                          centerOfMass [
+                            0.001179 0.000499 -0.002438
+                          ]
+                          inertiaMatrix [
+                            2.9572e-05 3.5401e-05 2.9167e-05
+                            3.6351e-09 6.7483e-07 -9.1482e-09
+                          ]
+                        }
+                      }
+                    ]
+                    name "HL_knee_link"
+                    boundingObject USE HL_knee_link
+                    physics Physics {
+                      density -1
+                      mass 0.6489
+                      centerOfMass [
+                        -0.00517 0 -0.12521
+                      ]
+                      inertiaMatrix [
+                        0.006478288 0.006528945 0.00013568
+                        2.4e-10 -0.00013 -1.015e-08
+                      ]
+                    }
+                  }
+                }
+              ]
+              name "HL_hip_link"
+              boundingObject USE HL_hip_link
+              physics Physics {
+                density -1
+                mass 1.337
+                centerOfMass [
+                  -0.00063 0.0201 -0.15827
+                ]
+                inertiaMatrix [
+                  0.01881684 0.01886441 0.000837413
+                  -3.29964e-05 0.000792 0.000185353
+                ]
+              }
+            }
+          }
+        ]
+        name "HL_abd_link"
+        boundingObject USE HL_abd_link
+        physics Physics {
+          density -1
+          mass 1.656
+          centerOfMass [
+            -0.05057 -0.046982 1e-06
+          ]
+          inertiaMatrix [
+            0.002476692 0.002206021 0.002653852
+            0.000400827 -3e-09 5.9e-08
+          ]
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 0 1
+        anchor 0.131409 0.000657 0.07
+      }
+      device [
+        RotationalMotor {
+          name "shoulder_joint"
+          minPosition -3.14
+          maxPosition 3.14
+          maxTorque 300
+        }
+        PositionSensor {
+          name "shoulder_joint_sensor"
+        }
+      ]
+      endPoint Solid {
+        translation 0.131409 0.000657 0.07
+        children [
+          Shape {
+            appearance DEF shoulder_Link_material PBRAppearance {
+              baseColor 0.752941 0.752941 0.752941
+              roughness 1
+              metalness 0
+            }
+            geometry DEF shoulder_Link Mesh {
+              url [
+                "/home/zishang/ros2_workspace/robot_description/src/bqr3_arm_description/meshes/shoulder_Link.STL"
+              ]
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              position -1.57
+              axis 0 1 0
+              anchor 0 -0.070087 0.055942
+            }
+            device [
+              RotationalMotor {
+                name "upper_arm_joint"
+                minPosition -3.14
+                maxPosition 3.14
+                maxTorque 300
+              }
+              PositionSensor {
+                name "upper_arm_joint_sensor"
+              }
+            ]
+            endPoint Solid {
+              translation 0 -0.070087 0.055942
+              rotation 0 -1 0 1.57
+              children [
+                Shape {
+                  appearance DEF upper_arm_material PBRAppearance {
+                    baseColor 0.752941 0.752941 0.752941
+                    roughness 1
+                    metalness 0
+                  }
+                  geometry DEF upper_arm Mesh {
+                    url [
+                      "/home/zishang/ros2_workspace/robot_description/src/bqr3_arm_description/meshes/upper_arm.STL"
+                    ]
+                  }
+                }
+                HingeJoint {
+                  jointParameters HingeJointParameters {
+                    position 2.88
+                    axis 0 1 0
+                    anchor -0.000996 0.051088 0.399999
+                  }
+                  device [
+                    RotationalMotor {
+                      name "forearm_joint"
+                      minPosition -3.14
+                      maxPosition 3.14
+                      maxTorque 300
+                    }
+                    PositionSensor {
+                      name "forearm_joint_sensor"
+                    }
+                  ]
+                  endPoint Solid {
+                    translation -0.000996 0.051088 0.399999
+                    rotation 0 0.9999999999999999 0 2.88
+                    children [
+                      Shape {
+                        appearance DEF forearm_material PBRAppearance {
+                          baseColor 0.752941 0.752941 0.752941
+                          roughness 1
+                          metalness 0
+                        }
+                        geometry DEF forearm Mesh {
+                          url [
+                            "/home/zishang/ros2_workspace/robot_description/src/bqr3_arm_description/meshes/forearm.STL"
+                          ]
+                        }
+                      }
+                      HingeJoint {
+                        jointParameters HingeJointParameters {
+                          position 0.26
+                          axis 0 1 0
+                          anchor -0.001899 0.014 0.399126
+                        }
+                        device [
+                          RotationalMotor {
+                            name "wrist_pitch_joint"
+                            minPosition -3.14
+                            maxPosition 3.14
+                            maxTorque 300
+                          }
+                          PositionSensor {
+                            name "wrist_pitch_joint_sensor"
+                          }
+                        ]
+                        endPoint Solid {
+                          translation -0.001899 0.014 0.399126
+                          rotation 0 1 0 0.25999999999999923
+                          children [
+                            Shape {
+                              appearance DEF wrist_pitch_material PBRAppearance {
+                                baseColor 0.752941 0.752941 0.752941
+                                roughness 1
+                                metalness 0
+                              }
+                              geometry DEF wrist_pitch Mesh {
+                                url [
+                                  "/home/zishang/ros2_workspace/robot_description/src/bqr3_arm_description/meshes/wrist_pitch.STL"
+                                ]
+                              }
+                            }
+                            HingeJoint {
+                              jointParameters HingeJointParameters {
+                                axis 0 0 1
+                                anchor -0.000331 0 0.133108
+                              }
+                              device [
+                                RotationalMotor {
+                                  name "wrist_yall_joint"
+                                  minPosition -3.14
+                                  maxPosition 3.14
+                                  maxTorque 300
+                                }
+                                PositionSensor {
+                                  name "wrist_yall_joint_sensor"
+                                }
+                              ]
+                              endPoint Solid {
+                                translation -0.000331 0 0.133108
+                                children [
+                                  Shape {
+                                    appearance DEF wrist_yall_material PBRAppearance {
+                                      baseColor 0.752941 0.752941 0.752941
+                                      roughness 1
+                                      metalness 0
+                                    }
+                                    geometry DEF wrist_yall Mesh {
+                                      url [
+                                        "/home/zishang/ros2_workspace/robot_description/src/bqr3_arm_description/meshes/wrist_yall.STL"
+                                      ]
+                                    }
+                                  }
+                                  HingeJoint {
+                                    jointParameters HingeJointParameters {
+                                      axis -0.999997 0 -0.002489
+                                      anchor 0.000787 0.03 0.085444
+                                    }
+                                    device [
+                                      RotationalMotor {
+                                        name "paw_left_joint"
+                                        minPosition -3.14
+                                        maxPosition 3.14
+                                        maxTorque 300
+                                      }
+                                      PositionSensor {
+                                        name "paw_left_joint_sensor"
+                                      }
+                                    ]
+                                    endPoint Solid {
+                                      translation 0.000787 0.03 0.085444
+                                      rotation -0.9999969024353068 0 -0.00248899975716075 0
+                                      children [
+                                        Shape {
+                                          appearance DEF paw_left_material PBRAppearance {
+                                            baseColor 0.752941 0.752941 0.752941
+                                            roughness 1
+                                            metalness 0
+                                          }
+                                          geometry DEF paw_left Mesh {
+                                            url [
+                                              "/home/zishang/ros2_workspace/robot_description/src/bqr3_arm_description/meshes/paw_left.STL"
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                      name "paw_left"
+                                      boundingObject USE paw_left
+                                      physics Physics {
+                                        density -1
+                                        mass 0.00846
+                                        centerOfMass [
+                                          -0.001093 0.006248 0.037444
+                                        ]
+                                        inertiaMatrix [
+                                          1.170216e-06 1.224844e-06 3.852595e-07
+                                          1.520896e-10 1.954171e-09 -6.114301e-08
+                                        ]
+                                      }
+                                    }
+                                  }
+                                  HingeJoint {
+                                    jointParameters HingeJointParameters {
+                                      axis -0.999997 0 -0.002489
+                                      anchor 0.000787 -0.03 0.085444
+                                    }
+                                    device [
+                                      RotationalMotor {
+                                        name "paw_right_joint"
+                                        minPosition -3.14
+                                        maxPosition 3.14
+                                        maxTorque 300
+                                      }
+                                      PositionSensor {
+                                        name "paw_right_joint_sensor"
+                                      }
+                                    ]
+                                    endPoint Solid {
+                                      translation 0.000787 -0.03 0.085444
+                                      rotation -0.9999969024353068 0 -0.00248899975716075 0
+                                      children [
+                                        Shape {
+                                          appearance DEF paw_right_material PBRAppearance {
+                                            baseColor 0.752941 0.752941 0.752941
+                                            roughness 1
+                                            metalness 0
+                                          }
+                                          geometry DEF paw_right Mesh {
+                                            url [
+                                              "/home/zishang/ros2_workspace/robot_description/src/bqr3_arm_description/meshes/paw_right.STL"
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                      name "paw_right"
+                                      boundingObject USE paw_right
+                                      physics Physics {
+                                        density -1
+                                        mass 0.00846
+                                        centerOfMass [
+                                          -0.001093 -0.007563 0.037444
+                                        ]
+                                        inertiaMatrix [
+                                          1.170216e-06 1.224844e-06 3.852595e-07
+                                          -1.523048e-10 1.953656e-09 6.114301e-08
+                                        ]
+                                      }
+                                    }
+                                  }
+                                ]
+                                name "wrist_yall"
+                                boundingObject USE wrist_yall
+                                physics Physics {
+                                  density -1
+                                  mass 0.082411
+                                  centerOfMass [
+                                    -0.000144 -0.000644 0.041479
+                                  ]
+                                  inertiaMatrix [
+                                    6.40756e-05 5.296054e-05 2.396825e-05
+                                    -3.238448e-10 6.5753e-08 2.082414e-08
+                                  ]
+                                }
+                              }
+                            }
+                          ]
+                          name "wrist_pitch"
+                          boundingObject USE wrist_pitch
+                          physics Physics {
+                            density -1
+                            mass 0.31855
+                            centerOfMass [
+                              -0.000104 0.007754 0.044674
+                            ]
+                            inertiaMatrix [
+                              0.0001090245 0.0001495111 0.0001393701
+                              -2.806361e-08 -1.520233e-07 2.865905e-07
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                    name "forearm"
+                    boundingObject USE forearm
+                    physics Physics {
+                      density -1
+                      mass 0.176801
+                      centerOfMass [
+                        -0.000225 -0.002405 0.179831
+                      ]
+                      inertiaMatrix [
+                        0.003088208 0.00315486 0.000139718
+                        3.498415e-07 8.294059e-06 -0.0001141079
+                      ]
+                    }
+                  }
+                }
+              ]
+              name "upper_arm"
+              boundingObject USE upper_arm
+              physics Physics {
+                density -1
+                mass 0.373394
+                centerOfMass [
+                  -0.000679 0.025356 0.272935
+                ]
+                inertiaMatrix [
+                  0.006081646 0.00622537 0.0003557652
+                  -9.470376e-09 1.422817e-05 8.858079e-09
+                ]
+              }
+            }
+          }
+        ]
+        name "shoulder_Link"
+        boundingObject USE shoulder_Link
+        physics Physics {
+          density -1
+          mass 0.219278
+          centerOfMass [
+            -1.6e-05 -0.012052 0.049414
+          ]
+          inertiaMatrix [
+            0.000272507 0.0003939693 0.0002419736
+            -1.217061e-08 -1.395598e-08 3.045883e-05
+          ]
+        }
+      }
+    }
+  ]
+  name "bqr3_arm"
+  boundingObject USE base_link
+  physics Physics {
+    density -1
+    mass 26.5
+    centerOfMass [
+      -9.2e-05 0.001447 -0.042478
+    ]
+    inertiaMatrix [
+      0.2594948 0.8599393 0.9455674
+      -4.1227e-05 0.000193862 -0.00204013
+    ]
+  }
+  controller "<extern>"
+  supervisor TRUE
+}
+Door {
+  translation 0 -2.38 0
+}
+OfficeChair {
+  translation 1.43 -1.82 0
+}
+WoodenPallet {
+  translation 0 2.18 0
+}

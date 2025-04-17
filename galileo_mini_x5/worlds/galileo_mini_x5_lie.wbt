@@ -8,8 +8,8 @@ WorldInfo {
   basicTimeStep 1
 }
 Viewpoint {
-  orientation 0.08015333584739821 0.06324039768201749 -0.9947743939474691 1.810663682074047
-  position 0.9477632031270524 2.955733079505815 0.9369202762194959
+  orientation -0.05537097998380406 -0.0035807125591433425 0.9984594298584203 3.270600811421811
+  position 2.2382928314172075 0.5061963390904696 0.46276952852570924
 }
 TexturedBackground {
 }
@@ -19,8 +19,8 @@ RectangleArena {
   floorSize 20 20
 }
 DEF galileo_mini_x5 Robot {
-  translation -0.011260799571310178 -0.0001364248460208996 0.3997463389544853
-  rotation 0.43798120856535133 -0.424245874376198 0.7925830549654778 0.00017010652278195423
+  translation -0.011144262266404328 -3.461291382878158e-05 0.09999856372775541
+  rotation 0.8456077077518083 -0.3539354025566661 0.3995964657098249 0.0004868630642065675
   children [
     Solid {
       children [
@@ -57,7 +57,7 @@ DEF galileo_mini_x5 Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position 9.361139608795074e-06
+        position 0.5000129274168289
         anchor 0.2015 0.08 0
       }
       device [
@@ -74,7 +74,7 @@ DEF galileo_mini_x5 Robot {
       ]
       endPoint Solid {
         translation 0.2015 0.08 0
-        rotation 1 0 0 9.361155676595339e-06
+        rotation 1 0 0 0.5000129274168288
         children [
           Shape {
             appearance DEF FL_abd_link_material PBRAppearance {
@@ -90,7 +90,7 @@ DEF galileo_mini_x5 Robot {
           }
           HingeJoint {
             jointParameters HingeJointParameters {
-              position 0.7199952381766677
+              position 1.0499948758925488
               axis 0 1 0
               anchor 0.1 0.1065 0
             }
@@ -108,7 +108,7 @@ DEF galileo_mini_x5 Robot {
             ]
             endPoint Solid {
               translation 0.1 0.1065 0
-              rotation 0 1 0 0.7199952381766677
+              rotation 0 1 0 1.049994875892549
               children [
                 Shape {
                   appearance DEF FL_hip_link_material PBRAppearance {
@@ -124,7 +124,7 @@ DEF galileo_mini_x5 Robot {
                 }
                 HingeJoint {
                   jointParameters HingeJointParameters {
-                    position -1.4400229706951158
+                    position -2.4600230940697605
                     axis 0 1 0
                     anchor 0 0 -0.26
                   }
@@ -142,7 +142,7 @@ DEF galileo_mini_x5 Robot {
                   ]
                   endPoint Solid {
                     translation 0 0 -0.26
-                    rotation 0 -1 0 1.4400229706951158
+                    rotation 0 -1 0 2.4600230940697605
                     children [
                       Shape {
                         appearance DEF FL_knee_link_material PBRAppearance {
@@ -207,6 +207,8 @@ DEF galileo_mini_x5 Robot {
                         -8.7e-08 -0.0006 8.38e-07
                       ]
                     }
+                    linearVelocity 5.861607512174976e-09 -1.3596998565552661e-08 4.97631708052428e-09
+                    angularVelocity -3.950625643069861e-07 5.2807509263242327e-08 5.7371529786654193e-08
                   }
                 }
               ]
@@ -230,6 +232,8 @@ DEF galileo_mini_x5 Robot {
                   -0.00031 0.001116 -0.00227
                 ]
               }
+              linearVelocity -7.655905847901338e-09 9.217355608232363e-09 5.182487546115602e-08
+              angularVelocity -3.9496987505854027e-07 -1.2477030301763595e-07 -3.9464099121712074e-08
             }
           }
         ]
@@ -255,11 +259,13 @@ DEF galileo_mini_x5 Robot {
             0.000362 0.000114 3.5e-05
           ]
         }
+        linearVelocity -9.110093575069523e-09 -1.526160996216074e-10 9.459009776472491e-08
+        angularVelocity -3.948307487442246e-07 -5.409816166105863e-08 -7.873576439677669e-10
       }
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position -1.057373189336022e-05
+        position -0.5000143235269299
         anchor 0.2015 -0.08 0
       }
       device [
@@ -276,7 +282,7 @@ DEF galileo_mini_x5 Robot {
       ]
       endPoint Solid {
         translation 0.2015 -0.08 0
-        rotation -1 0 0 1.0573736306155558e-05
+        rotation -1 0 0 0.5000143235269301
         children [
           Shape {
             appearance DEF FR_abd_link_material PBRAppearance {
@@ -292,7 +298,7 @@ DEF galileo_mini_x5 Robot {
           }
           HingeJoint {
             jointParameters HingeJointParameters {
-              position 0.7199951166798714
+              position 1.0499947064592867
               axis 0 1 0
               anchor 0.1 -0.10685 0
             }
@@ -310,7 +316,7 @@ DEF galileo_mini_x5 Robot {
             ]
             endPoint Solid {
               translation 0.1 -0.10685 0
-              rotation 0 1 0 0.7199951166798716
+              rotation 0 1 0 1.0499947064592865
               children [
                 Shape {
                   appearance DEF FR_hip_link_material PBRAppearance {
@@ -326,7 +332,7 @@ DEF galileo_mini_x5 Robot {
                 }
                 HingeJoint {
                   jointParameters HingeJointParameters {
-                    position -1.440024125133309
+                    position -2.4600244213708606
                     axis 0 1 0
                     anchor 0 0 -0.26
                   }
@@ -344,7 +350,7 @@ DEF galileo_mini_x5 Robot {
                   ]
                   endPoint Solid {
                     translation 0 0 -0.26
-                    rotation 0 -1 0 1.440024125133309
+                    rotation 0 -0.9999999999999999 0 2.4600244213708606
                     children [
                       Shape {
                         appearance DEF FR_knee_link_material PBRAppearance {
@@ -409,6 +415,8 @@ DEF galileo_mini_x5 Robot {
                         -8.7e-08 -0.0006 8.38e-07
                       ]
                     }
+                    linearVelocity 5.323784394675927e-09 1.2868362195563335e-08 8.235057946388245e-09
+                    angularVelocity 4.101219591664565e-07 4.645084088786778e-08 -5.473434093848999e-08
                   }
                 }
               ]
@@ -432,6 +440,8 @@ DEF galileo_mini_x5 Robot {
                   0.000284 0.001143 0.002508
                 ]
               }
+              linearVelocity -7.574804551838139e-09 -8.1249291152347e-09 6.256164512171625e-08
+              angularVelocity 4.1010261908652846e-07 -1.2399100334221484e-07 3.804328477293767e-08
             }
           }
         ]
@@ -457,11 +467,13 @@ DEF galileo_mini_x5 Robot {
             -0.000397 -9.6e-05 3e-05
           ]
         }
+        linearVelocity -9.15264696192783e-09 -1.6019001723284114e-09 9.94186535651421e-08
+        angularVelocity 4.0995226773633443e-07 -5.385102147490074e-08 -2.675418757050543e-10
       }
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position -1.1081399080137088e-05
+        position -0.5000173619956643
         anchor -0.2015 -0.08 0
       }
       device [
@@ -478,7 +490,7 @@ DEF galileo_mini_x5 Robot {
       ]
       endPoint Solid {
         translation -0.2015 -0.08 0
-        rotation -1 0 0 1.1081415611338384e-05
+        rotation -1 0 0 0.5000173619956645
         children [
           Shape {
             appearance DEF HR_abd_link_material PBRAppearance {
@@ -494,7 +506,7 @@ DEF galileo_mini_x5 Robot {
           }
           HingeJoint {
             jointParameters HingeJointParameters {
-              position 0.7199947840934279
+              position 1.049994042189405
               axis 0 1 0
               anchor -0.1 -0.10685 0
             }
@@ -512,7 +524,7 @@ DEF galileo_mini_x5 Robot {
             ]
             endPoint Solid {
               translation -0.1 -0.10685 0
-              rotation 0 1 0 0.7199947840934279
+              rotation 0 1 0 1.0499940421894047
               children [
                 Shape {
                   appearance DEF HR_hip_link_material PBRAppearance {
@@ -528,7 +540,7 @@ DEF galileo_mini_x5 Robot {
                 }
                 HingeJoint {
                   jointParameters HingeJointParameters {
-                    position -1.4400259824906654
+                    position -2.4600290111598264
                     axis 0 1 0
                     anchor 0 0 -0.26
                   }
@@ -546,7 +558,7 @@ DEF galileo_mini_x5 Robot {
                   ]
                   endPoint Solid {
                     translation 0 0 -0.26
-                    rotation 0 -1 0 1.4400259824906654
+                    rotation 0 -0.9999999999999999 0 2.4600290111598264
                     children [
                       Shape {
                         appearance DEF HR_knee_link_material PBRAppearance {
@@ -611,6 +623,8 @@ DEF galileo_mini_x5 Robot {
                         -8.7e-08 -0.0006 8.38e-07
                       ]
                     }
+                    linearVelocity -1.0278842712496902e-09 2.8618839875292535e-09 2.5348188864779982e-08
+                    angularVelocity 1.7162165395185572e-07 9.230134519365991e-09 -3.4905006664780087e-08
                   }
                 }
               ]
@@ -634,6 +648,8 @@ DEF galileo_mini_x5 Robot {
                   0.000198 0.001067 0.002833
                 ]
               }
+              linearVelocity -9.503439680731376e-09 -4.652711175210335e-09 5.231893551282951e-08
+              angularVelocity 1.716240791748206e-07 -8.770495163217355e-08 1.7924751771690234e-08
             }
           }
         ]
@@ -659,11 +675,13 @@ DEF galileo_mini_x5 Robot {
             0.000364 -0.000106 -3.8e-05
           ]
         }
+        linearVelocity -9.601515980372635e-09 -1.1720135013929875e-09 7.341317452315664e-08
+        angularVelocity 1.7157906314923762e-07 -5.397712188614567e-08 -4.927637498870111e-10
       }
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position 1.1021374872737688e-05
+        position 0.5000175683173329
         anchor -0.2015 0.08 0
       }
       device [
@@ -680,7 +698,7 @@ DEF galileo_mini_x5 Robot {
       ]
       endPoint Solid {
         translation -0.2015 0.08 0
-        rotation 1 0 0 1.1021380738917212e-05
+        rotation 1 0 0 0.5000175683173332
         children [
           Shape {
             appearance DEF HL_abd_link_material PBRAppearance {
@@ -696,7 +714,7 @@ DEF galileo_mini_x5 Robot {
           }
           HingeJoint {
             jointParameters HingeJointParameters {
-              position 0.7199946815243207
+              position 1.049993900534613
               axis 0 1 0
               anchor -0.1 0.1065 0
             }
@@ -714,7 +732,7 @@ DEF galileo_mini_x5 Robot {
             ]
             endPoint Solid {
               translation -0.1 0.1065 0
-              rotation 0 1 0 0.7199946815243207
+              rotation 0 1 0 1.0499939005346128
               children [
                 Shape {
                   appearance DEF HL_hip_link_material PBRAppearance {
@@ -730,7 +748,7 @@ DEF galileo_mini_x5 Robot {
                 }
                 HingeJoint {
                   jointParameters HingeJointParameters {
-                    position -1.4400266446391223
+                    position -2.4600298169621073
                     axis 0 1 0
                     anchor 6.3e-05 0 -0.26
                   }
@@ -748,7 +766,7 @@ DEF galileo_mini_x5 Robot {
                   ]
                   endPoint Solid {
                     translation 6.3e-05 0 -0.26
-                    rotation 0 -0.9999999999999999 0 1.4400266446391223
+                    rotation 0 -1 0 2.4600298169621073
                     children [
                       Shape {
                         appearance DEF HL_knee_link_material PBRAppearance {
@@ -813,6 +831,8 @@ DEF galileo_mini_x5 Robot {
                         -8.7e-08 -0.0006 8.38e-07
                       ]
                     }
+                    linearVelocity -1.0160643703064345e-10 -3.411802139102796e-09 1.9669484871458758e-08
+                    angularVelocity -1.6614307941674254e-07 8.816108126621796e-09 3.374170958484398e-08
                   }
                 }
               ]
@@ -836,6 +856,8 @@ DEF galileo_mini_x5 Robot {
                   -0.00031 0.001116 -0.00227
                 ]
               }
+              linearVelocity -9.302916453149508e-09 4.393213235854447e-09 4.437869623375744e-08
+              angularVelocity -1.6610326402616204e-07 -9.05770019026898e-08 -2.051723745987712e-08
             }
           }
         ]
@@ -861,6 +883,8 @@ DEF galileo_mini_x5 Robot {
             0.000364 -0.000106 -3.8e-05
           ]
         }
+        linearVelocity -9.430265295551366e-09 -3.2950890380977047e-11 6.745569873246027e-08
+        angularVelocity -1.6605958558787906e-07 -5.40615501425518e-08 -5.393464027999736e-10
       }
     }
     Solid {
@@ -880,7 +904,7 @@ DEF galileo_mini_x5 Robot {
         }
         HingeJoint {
           jointParameters HingeJointParameters {
-            position -6.64775623989623e-09
+            position -1.494844260038132e-08
             axis 0 0 1
             anchor 0 0 0.0605
           }
@@ -913,7 +937,7 @@ DEF galileo_mini_x5 Robot {
               }
               HingeJoint {
                 jointParameters HingeJointParameters {
-                  position -8.205181515860339e-07
+                  position -1.568156156424825e-06
                   axis 0 1 0
                   anchor 0.02 0 0.04
                 }
@@ -931,7 +955,7 @@ DEF galileo_mini_x5 Robot {
                 ]
                 endPoint Solid {
                   translation 0.02 0 0.04
-                  rotation 0 -1 0 8.205115734300793e-07
+                  rotation 0 -1 0 1.5682366033700951e-06
                   children [
                     Shape {
                       appearance DEF link2_material PBRAppearance {
@@ -947,7 +971,7 @@ DEF galileo_mini_x5 Robot {
                     }
                     HingeJoint {
                       jointParameters HingeJointParameters {
-                        position -6.0192064002661355e-06
+                        position -1.151186623744686e-05
                         axis 0 -1 -7e-06
                         anchor -0.264 0 0
                       }
@@ -965,7 +989,7 @@ DEF galileo_mini_x5 Robot {
                       ]
                       endPoint Solid {
                         translation -0.264 0 0
-                        rotation 0.9999999999954713 1.0012332567663636e-11 -3.009603200132167e-06 3.1416
+                        rotation 0.9999999999834347 1.9148808925024214e-11 -5.7559331186986195e-06 3.1416
                         children [
                           Shape {
                             appearance DEF link3_material PBRAppearance {
@@ -981,7 +1005,7 @@ DEF galileo_mini_x5 Robot {
                           }
                           HingeJoint {
                             jointParameters HingeJointParameters {
-                              position -1.4485914582059556e-06
+                              position -2.7703904999817173e-06
                               axis 0 1 0
                               anchor 0.245 0 -0.056
                             }
@@ -999,7 +1023,7 @@ DEF galileo_mini_x5 Robot {
                             ]
                             endPoint Solid {
                               translation 0.245 0 -0.056
-                              rotation 0 -1 0 1.4487117055340886e-06
+                              rotation 0 -1 0 2.7703338651920655e-06
                               children [
                                 Shape {
                                   appearance DEF link4_material PBRAppearance {
@@ -1015,7 +1039,7 @@ DEF galileo_mini_x5 Robot {
                                 }
                                 HingeJoint {
                                   jointParameters HingeJointParameters {
-                                    position 1.925006134393391e-08
+                                    position 4.2980411483037135e-08
                                     axis 0 0 1
                                     anchor 0.06775 0.0005 -0.0865
                                   }
@@ -1033,6 +1057,7 @@ DEF galileo_mini_x5 Robot {
                                   ]
                                   endPoint Solid {
                                     translation 0.06775 0.0005 -0.0865
+                                    rotation 0 0 0.9999999999999999 4.2146848510894035e-08
                                     children [
                                       Shape {
                                         appearance DEF link5_material PBRAppearance {
@@ -1048,7 +1073,7 @@ DEF galileo_mini_x5 Robot {
                                       }
                                       HingeJoint {
                                         jointParameters HingeJointParameters {
-                                          position -1.1825096026479721e-08
+                                          position -2.632295482929675e-08
                                           anchor 0.02895 0 0.0865
                                         }
                                         device [
@@ -1065,7 +1090,7 @@ DEF galileo_mini_x5 Robot {
                                         ]
                                         endPoint Solid {
                                           translation 0.02895 0 0.0865
-                                          rotation -1 0 0 3.141600012131571
+                                          rotation -1 0 0 3.1416000266294297
                                           children [
                                             Shape {
                                               appearance DEF link6_material PBRAppearance {
@@ -1148,6 +1173,8 @@ DEF galileo_mini_x5 Robot {
                                               0 0 0
                                             ]
                                           }
+                                          linearVelocity -2.330129529421942e-08 -2.2317342644936568e-08 1.0518661551457816e-07
+                                          angularVelocity -1.8333965026230053e-07 -6.45102810339673e-08 -3.2186158588735815e-07
                                         }
                                       }
                                     ]
@@ -1163,6 +1190,8 @@ DEF galileo_mini_x5 Robot {
                                         0 7e-05 0
                                       ]
                                     }
+                                    linearVelocity -2.529297511427615e-08 3.4806455362030197e-09 1.0015076029215274e-07
+                                    angularVelocity -3.7338043834964564e-08 -6.447845292974012e-08 -3.2185158837874234e-07
                                   }
                                 }
                               ]
@@ -1178,6 +1207,8 @@ DEF galileo_mini_x5 Robot {
                                   -2e-05 -9e-05 2e-05
                                 ]
                               }
+                              linearVelocity -2.5810367235692574e-08 6.80890897564408e-09 9.816223384194367e-08
+                              angularVelocity -3.739713644883952e-08 -6.457847670361708e-08 -8.257188273374559e-08
                             }
                           }
                         ]
@@ -1193,6 +1224,8 @@ DEF galileo_mini_x5 Robot {
                             -3e-05 -0.00039 1e-05
                           ]
                         }
+                        linearVelocity -2.284728943055842e-08 1.331378028714403e-08 9.14313350759232e-08
+                        angularVelocity -3.7395601618207865e-08 -6.453411542741785e-08 -8.26098231916629e-08
                       }
                     }
                   ]
@@ -1208,6 +1241,8 @@ DEF galileo_mini_x5 Robot {
                       1e-05 -4e-05 0
                     ]
                   }
+                  linearVelocity -1.917185438939277e-08 1.5566828957526292e-08 8.630316890345601e-08
+                  angularVelocity -3.7382798907091646e-08 -5.405292038765103e-08 -8.270745451951428e-08
                 }
               }
             ]
@@ -1223,6 +1258,8 @@ DEF galileo_mini_x5 Robot {
                 0 1e-05 0
               ]
             }
+            linearVelocity -1.858886120162502e-08 4.8218640219112275e-09 9.27965332793905e-08
+            angularVelocity -3.73680622703466e-08 -5.3989014109652484e-08 -8.277346678682646e-08
           }
         }
       ]
