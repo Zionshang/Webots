@@ -4,19 +4,13 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/project
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/Grass.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/apartment_structure/protos/Door.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/chairs/protos/OfficeChair.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/pallet/protos/WoodenPallet.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/tools/protos/PlatformCart.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/drinks/protos/Can.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/tables/protos/Table.proto"
 
 WorldInfo {
   basicTimeStep 1
 }
 Viewpoint {
-  orientation 0.17751598792938664 0.3626289061073466 -0.9148706741856159 0.9826100157014345
-  position -4.6409396330852 6.386660849891102 3.8300252512886015
+  orientation -0.12340500642303057 -0.18994998936662183 0.9740072925442353 5.106729932945933
+  position -1.2785569725858827 5.323685331277109 1.6318564921995509
 }
 TexturedBackground {
 }
@@ -26,29 +20,6 @@ RectangleArena {
   floorSize 1000 1000
   floorAppearance Grass {
   }
-}
-Table {
-  translation 0.89 0 0.6
-  size 0.5 1.8 0.3
-}
-Table {
-  translation 0.89 0 0.3
-  name "table(1)"
-  size 0.5 1.8 0.3
-}
-Table {
-  translation 0.89 0 0
-  name "table(2)"
-  size 0.5 1.8 0.3
-}
-Table {
-  translation 0.89 0 0.9
-  name "table(3)"
-  size 0.5 1.8 0.3
-}
-Can {
-  translation 0.69 0 0.96
-  mass 0.05
 }
 DEF bqr3_arm Robot {
   translation 0 0 0.57
@@ -1140,17 +1111,185 @@ DEF bqr3_arm Robot {
   controller "<extern>"
   supervisor TRUE
 }
-Door {
-  translation 0 -4.97 0
+Solid {
+  translation 2.78269 -0.04 0.606631
+  rotation 0 1 0 -0.261795307179586
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry DEF slop_box Box {
+        size 5 2.2 0.1
+      }
+    }
+  ]
+  name "15degree"
+  boundingObject USE slop_box
 }
-OfficeChair {
-  translation 1.43 -5.02 0
+Solid {
+  translation 9.07652 -0.04 0.593071
+  rotation 0 1 0 0.262
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry DEF slop_box Box {
+        size 5 2.2 0.1
+      }
+    }
+  ]
+  name "15degree(1)"
+  boundingObject USE slop_box
 }
-WoodenPallet {
-  translation -0.01 3.64 -0.07
+Solid {
+  translation 5.93269 -0.05 1.24663
+  rotation 0 1 0 4.07987e-06
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry DEF slop_box Box {
+        size 1.5 2.2 0.1
+      }
+    }
+  ]
+  name "0"
+  boundingObject USE slop_box
 }
-PlatformCart {
-  translation 1.19 3.9 0
+Solid {
+  translation 5.79269 -2.62 1.65663
+  rotation 0 1 0 4.07987e-06
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry DEF slop_box Box {
+        size 1.5 2.2 0.1
+      }
+    }
+  ]
+  name "0(1)"
+  boundingObject USE slop_box
+}
+Solid {
+  translation 5.63269 -5.28 2.02663
+  rotation 0 1 0 4.079871537635201e-06
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry DEF slop_box Box {
+        size 1.5 2.2 0.1
+      }
+    }
+  ]
+  name "0(2)"
+  boundingObject USE slop_box
+}
+Solid {
+  translation 5.47269 -7.76 2.42663
+  rotation 0 1 0 4.079871537635201e-06
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry DEF slop_box Box {
+        size 1.5 2.2 0.1
+      }
+    }
+  ]
+  name "0(3)"
+  boundingObject USE slop_box
+}
+Solid {
+  translation 2.71087 -2.62 0.803968
+  rotation 0 1 0 -0.349065844
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry DEF slop_box Box {
+        size 5 2.2 0.1
+      }
+    }
+  ]
+  name "20"
+  boundingObject USE slop_box
+}
+Solid {
+  translation 8.87032 -2.62 0.803921
+  rotation 0 1 0 0.349066
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry DEF slop_box Box {
+        size 5 2.2 0.1
+      }
+    }
+  ]
+  name "20(1)"
+  boundingObject USE slop_box
+}
+Solid {
+  translation 2.62747 -5.28 0.98577
+  rotation 0 1 0 -0.43
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry DEF slop_box Box {
+        size 5 2.2 0.1
+      }
+    }
+  ]
+  name "25"
+  boundingObject USE slop_box
+}
+Solid {
+  translation 8.63516 -5.28 0.9972
+  rotation 0 1 0 0.43
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry DEF slop_box Box {
+        size 5 2.2 0.1
+      }
+    }
+  ]
+  name "25(1)"
+  boundingObject USE slop_box
+}
+Solid {
+  translation 2.57518 -7.76 1.19787
+  rotation 0 1 0 -0.52
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry DEF slop_box Box {
+        size 5 2.2 0.1
+      }
+    }
+  ]
+  name "30"
+  boundingObject USE slop_box
+}
+Solid {
+  translation 8.36825 -7.76 1.19267
+  rotation 0 1 0 0.52
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry DEF slop_box Box {
+        size 5 2.2 0.1
+      }
+    }
+  ]
+  name "30(1)"
+  boundingObject USE slop_box
 }
 DEF contrl_box Robot {
   name "control_box"

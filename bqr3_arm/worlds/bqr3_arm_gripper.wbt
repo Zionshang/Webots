@@ -8,15 +8,13 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/project
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/chairs/protos/OfficeChair.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/pallet/protos/WoodenPallet.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/tools/protos/PlatformCart.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/drinks/protos/Can.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/tables/protos/Table.proto"
 
 WorldInfo {
   basicTimeStep 1
 }
 Viewpoint {
-  orientation 0.17751598792938664 0.3626289061073466 -0.9148706741856159 0.9826100157014345
-  position -4.6409396330852 6.386660849891102 3.8300252512886015
+  orientation 0.22246340561247463 0.14120394182803683 -0.9646613291593709 2.0427531786867448
+  position 0.9127728497085427 1.6757420510003345 1.215394055501157
 }
 TexturedBackground {
 }
@@ -26,29 +24,6 @@ RectangleArena {
   floorSize 1000 1000
   floorAppearance Grass {
   }
-}
-Table {
-  translation 0.89 0 0.6
-  size 0.5 1.8 0.3
-}
-Table {
-  translation 0.89 0 0.3
-  name "table(1)"
-  size 0.5 1.8 0.3
-}
-Table {
-  translation 0.89 0 0
-  name "table(2)"
-  size 0.5 1.8 0.3
-}
-Table {
-  translation 0.89 0 0.9
-  name "table(3)"
-  size 0.5 1.8 0.3
-}
-Can {
-  translation 0.69 0 0.96
-  mass 0.05
 }
 DEF bqr3_arm Robot {
   translation 0 0 0.57
