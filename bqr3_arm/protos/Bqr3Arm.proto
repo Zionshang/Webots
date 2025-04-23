@@ -2,7 +2,7 @@
 # license: Apache License 2.0
 # license url: http://www.apache.org/licenses/LICENSE-2.0
 # This is a proto file for Webots for the Bqr3Arm
-# Extracted from: /home/zishang/ros2_workspace/robot_description/src/bqr3_arm_description/urdf/bqr3_arm.urdf
+# Extracted from: ../urdf/bqr3_arm.urdf
 
 PROTO Bqr3Arm [
   field  SFVec3f     translation     0 0 0
@@ -687,7 +687,7 @@ PROTO Bqr3Arm [
                 metalness 0
               }
               geometry DEF shoulder_Link Mesh {
-                url "/home/zishang/ros2_workspace/robot_description/src/bqr3_arm_description/meshes/shoulder_Link.STL"
+                url "../meshes/shoulder_Link.STL"
               }
             }
             HingeJoint {
@@ -717,7 +717,7 @@ PROTO Bqr3Arm [
                       metalness 0
                     }
                     geometry DEF upper_arm Mesh {
-                      url "/home/zishang/ros2_workspace/robot_description/src/bqr3_arm_description/meshes/upper_arm.STL"
+                      url "../meshes/upper_arm.STL"
                     }
                   }
                   HingeJoint {
@@ -747,7 +747,7 @@ PROTO Bqr3Arm [
                             metalness 0
                           }
                           geometry DEF forearm Mesh {
-                            url "/home/zishang/ros2_workspace/robot_description/src/bqr3_arm_description/meshes/forearm.STL"
+                            url "../meshes/forearm.STL"
                           }
                         }
                         HingeJoint {
@@ -777,7 +777,7 @@ PROTO Bqr3Arm [
                                   metalness 0
                                 }
                                 geometry DEF wrist_pitch Mesh {
-                                  url "/home/zishang/ros2_workspace/robot_description/src/bqr3_arm_description/meshes/wrist_pitch.STL"
+                                  url "../meshes/wrist_pitch.STL"
                                 }
                               }
                               HingeJoint {
@@ -807,7 +807,7 @@ PROTO Bqr3Arm [
                                         metalness 0
                                       }
                                       geometry DEF wrist_yall Mesh {
-                                        url "/home/zishang/ros2_workspace/robot_description/src/bqr3_arm_description/meshes/wrist_yall.STL"
+                                        url "../meshes/wrist_yall.STL"
                                       }
                                     }
                                     HingeJoint {
@@ -837,7 +837,7 @@ PROTO Bqr3Arm [
                                               metalness 0
                                             }
                                             geometry DEF paw_left Mesh {
-                                              url "/home/zishang/ros2_workspace/robot_description/src/bqr3_arm_description/meshes/paw_left.STL"
+                                              url "../meshes/paw_left.STL"
                                             }
                                           }
                                         ]
@@ -881,7 +881,7 @@ PROTO Bqr3Arm [
                                               metalness 0
                                             }
                                             geometry DEF paw_right Mesh {
-                                              url "/home/zishang/ros2_workspace/robot_description/src/bqr3_arm_description/meshes/paw_right.STL"
+                                              url "../meshes/paw_right.STL"
                                             }
                                           }
                                         ]
