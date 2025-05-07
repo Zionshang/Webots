@@ -64,7 +64,7 @@ DEF bqr3_arm Robot {
       }
       geometry DEF base_link Mesh {
         url [
-          "/home/zishang/ros2_workspace/robot_description/install/bqr3_description/share/bqr3_description/meshes/base_link.STL"
+          "../meshes/base_link.STL"
         ]
       }
     }
@@ -95,7 +95,7 @@ DEF bqr3_arm Robot {
             }
             geometry DEF FR_abd_link Mesh {
               url [
-                "/home/zishang/ros2_workspace/robot_description/install/bqr3_description/share/bqr3_description/meshes/FR_abd_link.STL"
+                "../meshes/FR_abd_link.STL"
               ]
             }
           }
@@ -128,7 +128,7 @@ DEF bqr3_arm Robot {
                   }
                   geometry DEF FR_hip_link Mesh {
                     url [
-                      "/home/zishang/ros2_workspace/robot_description/install/bqr3_description/share/bqr3_description/meshes/FR_hip_link.STL"
+                      "../meshes/FR_hip_link.STL"
                     ]
                   }
                 }
@@ -161,7 +161,7 @@ DEF bqr3_arm Robot {
                         }
                         geometry DEF FR_knee_link Mesh {
                           url [
-                            "/home/zishang/ros2_workspace/robot_description/install/bqr3_description/share/bqr3_description/meshes/FR_knee_link.STL"
+                            "../meshes/FR_knee_link.STL"
                           ]
                         }
                       }
@@ -175,7 +175,7 @@ DEF bqr3_arm Robot {
                             }
                             geometry DEF FR_foot_link Mesh {
                               url [
-                                "/home/zishang/ros2_workspace/robot_description/install/bqr3_description/share/bqr3_description/meshes/FR_foot_link.STL"
+                                "../meshes/FR_foot_link.STL"
                               ]
                             }
                           }
@@ -271,7 +271,7 @@ DEF bqr3_arm Robot {
             }
             geometry DEF HR_abd_link Mesh {
               url [
-                "/home/zishang/ros2_workspace/robot_description/install/bqr3_description/share/bqr3_description/meshes/HR_abd_link.STL"
+                "../meshes/HR_abd_link.STL"
               ]
             }
           }
@@ -304,7 +304,7 @@ DEF bqr3_arm Robot {
                   }
                   geometry DEF HR_hip_link Mesh {
                     url [
-                      "/home/zishang/ros2_workspace/robot_description/install/bqr3_description/share/bqr3_description/meshes/HR_hip_link.STL"
+                      "../meshes/HR_hip_link.STL"
                     ]
                   }
                 }
@@ -337,7 +337,7 @@ DEF bqr3_arm Robot {
                         }
                         geometry DEF HR_knee_link Mesh {
                           url [
-                            "/home/zishang/ros2_workspace/robot_description/install/bqr3_description/share/bqr3_description/meshes/HR_knee_link.STL"
+                            "../meshes/HR_knee_link.STL"
                           ]
                         }
                       }
@@ -351,7 +351,7 @@ DEF bqr3_arm Robot {
                             }
                             geometry DEF HR_foot_link Mesh {
                               url [
-                                "/home/zishang/ros2_workspace/robot_description/install/bqr3_description/share/bqr3_description/meshes/HR_foot_link.STL"
+                                "../meshes/HR_foot_link.STL"
                               ]
                             }
                           }
@@ -447,7 +447,7 @@ DEF bqr3_arm Robot {
             }
             geometry DEF FL_abd_link Mesh {
               url [
-                "/home/zishang/ros2_workspace/robot_description/install/bqr3_description/share/bqr3_description/meshes/FL_abd_link.STL"
+                "../meshes/FL_abd_link.STL"
               ]
             }
           }
@@ -480,7 +480,7 @@ DEF bqr3_arm Robot {
                   }
                   geometry DEF FL_hip_link Mesh {
                     url [
-                      "/home/zishang/ros2_workspace/robot_description/install/bqr3_description/share/bqr3_description/meshes/FL_hip_link.STL"
+                      "../meshes/FL_hip_link.STL"
                     ]
                   }
                 }
@@ -513,7 +513,7 @@ DEF bqr3_arm Robot {
                         }
                         geometry DEF FL_knee_link Mesh {
                           url [
-                            "/home/zishang/ros2_workspace/robot_description/install/bqr3_description/share/bqr3_description/meshes/FL_knee_link.STL"
+                            "../meshes/FL_knee_link.STL"
                           ]
                         }
                       }
@@ -527,7 +527,7 @@ DEF bqr3_arm Robot {
                             }
                             geometry DEF FL_foot_link Mesh {
                               url [
-                                "/home/zishang/ros2_workspace/robot_description/install/bqr3_description/share/bqr3_description/meshes/FL_foot_link.STL"
+                                "../meshes/FL_foot_link.STL"
                               ]
                             }
                           }
@@ -623,7 +623,7 @@ DEF bqr3_arm Robot {
             }
             geometry DEF HL_abd_link Mesh {
               url [
-                "/home/zishang/ros2_workspace/robot_description/install/bqr3_description/share/bqr3_description/meshes/HL_abd_link.STL"
+                "../meshes/HL_abd_link.STL"
               ]
             }
           }
@@ -656,7 +656,7 @@ DEF bqr3_arm Robot {
                   }
                   geometry DEF HL_hip_link Mesh {
                     url [
-                      "/home/zishang/ros2_workspace/robot_description/install/bqr3_description/share/bqr3_description/meshes/HL_hip_link.STL"
+                      "../meshes/HL_hip_link.STL"
                     ]
                   }
                 }
@@ -689,7 +689,7 @@ DEF bqr3_arm Robot {
                         }
                         geometry DEF HL_knee_link Mesh {
                           url [
-                            "/home/zishang/ros2_workspace/robot_description/install/bqr3_description/share/bqr3_description/meshes/HL_knee_link.STL"
+                            "../meshes/HL_knee_link.STL"
                           ]
                         }
                       }
@@ -703,7 +703,7 @@ DEF bqr3_arm Robot {
                             }
                             geometry DEF HL_foot_link Mesh {
                               url [
-                                "/home/zishang/ros2_workspace/robot_description/install/bqr3_description/share/bqr3_description/meshes/HL_foot_link.STL"
+                                "../meshes/HL_foot_link.STL"
                               ]
                             }
                           }
@@ -799,7 +799,7 @@ DEF bqr3_arm Robot {
             }
             geometry DEF shoulder_Link Mesh {
               url [
-                "/home/zishang/ros2_workspace/robot_description/src/bqr3_arm_description/meshes/shoulder_Link.STL"
+                "../meshes/shoulder_Link.STL"
               ]
             }
           }
@@ -832,7 +832,7 @@ DEF bqr3_arm Robot {
                   }
                   geometry DEF upper_arm Mesh {
                     url [
-                      "/home/zishang/ros2_workspace/robot_description/src/bqr3_arm_description/meshes/upper_arm.STL"
+                      "../meshes/upper_arm.STL"
                     ]
                   }
                 }
@@ -865,7 +865,7 @@ DEF bqr3_arm Robot {
                         }
                         geometry DEF forearm Mesh {
                           url [
-                            "/home/zishang/ros2_workspace/robot_description/src/bqr3_arm_description/meshes/forearm.STL"
+                            "../meshes/forearm.STL"
                           ]
                         }
                       }
@@ -898,7 +898,7 @@ DEF bqr3_arm Robot {
                               }
                               geometry DEF wrist_pitch Mesh {
                                 url [
-                                  "/home/zishang/ros2_workspace/robot_description/src/bqr3_arm_description/meshes/wrist_pitch.STL"
+                                  "../meshes/wrist_pitch.STL"
                                 ]
                               }
                             }
@@ -929,7 +929,7 @@ DEF bqr3_arm Robot {
                                     }
                                     geometry DEF wrist_yall Mesh {
                                       url [
-                                        "/home/zishang/ros2_workspace/robot_description/src/bqr3_arm_description/meshes/wrist_yall.STL"
+                                        "../meshes/wrist_yall.STL"
                                       ]
                                     }
                                   }
@@ -961,7 +961,7 @@ DEF bqr3_arm Robot {
                                           }
                                           geometry DEF paw_left Mesh {
                                             url [
-                                              "/home/zishang/ros2_workspace/robot_description/src/bqr3_arm_description/meshes/paw_left.STL"
+                                              "../meshes/paw_left.STL"
                                             ]
                                           }
                                         }
@@ -1009,7 +1009,7 @@ DEF bqr3_arm Robot {
                                           }
                                           geometry DEF paw_right Mesh {
                                             url [
-                                              "/home/zishang/ros2_workspace/robot_description/src/bqr3_arm_description/meshes/paw_right.STL"
+                                              "../meshes/paw_right.STL"
                                             ]
                                           }
                                         }
