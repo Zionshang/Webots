@@ -2,19 +2,27 @@
 
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/UnevenTerrain.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/Grass.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/tables/protos/Desk.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/drinks/protos/BeerBottle.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/drinks/protos/Can.proto"
 
 WorldInfo {
   basicTimeStep 1
 }
 Viewpoint {
-  orientation -0.17524119434205532 -0.2791942055235806 0.9441086375029234 5.1097473621724845
-  position -1.3939515008596812 2.7531412494134946 1.3782650440240665
-  follow "bqr3_arm"
+  orientation 0.37953086279575426 0.640060088413508 -0.668041471321656 1.4518491881963516
+  position -0.1673463268161292 1.3866691091042784 3.2213629232205623
 }
 TexturedBackground {
 }
 TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 1000 1000
+  floorAppearance Grass {
+  }
 }
 DEF bqr3_arm Robot {
   translation 0 0 0.57
@@ -1109,7 +1117,14 @@ DEF bqr3_arm Robot {
 DEF contrl_box Robot {
   name "control_box"
 }
-UnevenTerrain {
-  translation 0 -2.67 -3.57
-  size 20 20 5
+Desk {
+  translation 0.78425 0.02 0
+}
+BeerBottle {
+  translation 1.04 0.11 0.71
+  mass 0.01
+}
+Can {
+  translation 1.03 -0.07 0.77
+  mass 0.01
 }

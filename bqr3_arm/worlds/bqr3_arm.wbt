@@ -4,19 +4,21 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/project
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/Grass.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/apartment_structure/protos/Door.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/chairs/protos/OfficeChair.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/pallet/protos/WoodenPallet.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/tools/protos/PlatformCart.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/drinks/protos/Can.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/tables/protos/Table.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/containers/protos/WoodenBox.proto"
 
 WorldInfo {
   basicTimeStep 1
 }
 Viewpoint {
+<<<<<<< HEAD
   orientation 0.10062081802601765 0.1295844449860524 -0.9864498581263172 1.3336900263616365
   position -1.2667020954770754 3.8464395355734142 1.2096727464928505
+=======
+  orientation 0.21011376826091083 0.2941703397056213 -0.9323711791044806 1.3073964959446676
+  position -0.776698447802173 4.560757604317174 2.6966446206143737
+>>>>>>> 19735b0 (修改bqr3_arm的世界文件)
 }
 TexturedBackground {
 }
@@ -27,28 +29,9 @@ RectangleArena {
   floorAppearance Grass {
   }
 }
-Table {
-  translation 0.89 0 0.6
-  size 0.5 1.8 0.3
-}
-Table {
-  translation 0.89 0 0.3
-  name "table(1)"
-  size 0.5 1.8 0.3
-}
-Table {
-  translation 0.89 0 0
-  name "table(2)"
-  size 0.5 1.8 0.3
-}
-Table {
-  translation 0.89 0 0.9
-  name "table(3)"
-  size 0.5 1.8 0.3
-}
-Can {
-  translation 0.69 0 0.96
-  mass 0.05
+WoodenBox {
+  translation 1.21 0 0.41
+  mass 50
 }
 DEF bqr3_arm Robot {
   translation 0 0 0.57
@@ -1140,17 +1123,11 @@ DEF bqr3_arm Robot {
   controller "<extern>"
   supervisor TRUE
 }
-Door {
-  translation 0 -4.97 0
-}
-OfficeChair {
-  translation 1.43 -5.02 0
-}
 WoodenPallet {
   translation -0.01 3.64 -0.07
 }
 PlatformCart {
-  translation 1.19 3.9 0
+  translation 1.19 0.05 0
 }
 DEF contrl_box Robot {
   name "control_box"

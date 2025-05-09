@@ -4,13 +4,15 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/project
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/Grass.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/rocks/protos/Rock.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/pallet/protos/WoodenPallet.proto"
 
 WorldInfo {
   basicTimeStep 1
 }
 Viewpoint {
-  orientation -0.12340500642303057 -0.18994998936662183 0.9740072925442353 5.106729932945933
-  position -1.2785569725858827 5.323685331277109 1.6318564921995509
+  orientation 0.33288606964908385 -0.19145322804479456 -0.9233268793362474 4.117915541350488
+  position 3.155866508885384 -2.9611801166142095 3.118793371044275
 }
 TexturedBackground {
 }
@@ -22,7 +24,7 @@ RectangleArena {
   }
 }
 DEF bqr3_arm Robot {
-  translation 0 0 0.57
+  translation 0 0.1 0.57
   children [
     Solid {
       children [
@@ -1111,186 +1113,133 @@ DEF bqr3_arm Robot {
   controller "<extern>"
   supervisor TRUE
 }
-Solid {
-  translation 2.78269 -0.04 0.606631
-  rotation 0 1 0 -0.261795307179586
-  children [
-    Shape {
-      appearance PBRAppearance {
-      }
-      geometry DEF slop_box Box {
-        size 5 2.2 0.1
-      }
-    }
-  ]
-  name "15degree"
-  boundingObject USE slop_box
+WoodenPallet {
+  translation 1.76 0.16 0
+  rotation 0 0 1 -0.785395307179586
+  size 0.4 0.4 0.1
+  lathNumber 3
 }
-Solid {
-  translation 9.07652 -0.04 0.593071
-  rotation 0 1 0 0.262
-  children [
-    Shape {
-      appearance PBRAppearance {
-      }
-      geometry DEF slop_box Box {
-        size 5 2.2 0.1
-      }
-    }
-  ]
-  name "15degree(1)"
-  boundingObject USE slop_box
+WoodenPallet {
+  translation 1.16644 -0.172779 0
+  rotation 0 0 1 -0.523595307179586
+  name "wooden pallet(2)"
+  size 0.4 0.4 0.1
+  lathNumber 3
 }
-Solid {
-  translation 5.93269 -0.05 1.24663
-  rotation 0 1 0 4.07987e-06
-  children [
-    Shape {
-      appearance PBRAppearance {
-      }
-      geometry DEF slop_box Box {
-        size 1.5 2.2 0.1
-      }
-    }
-  ]
-  name "0"
-  boundingObject USE slop_box
-}
-Solid {
-  translation 5.79269 -2.62 1.65663
-  rotation 0 1 0 4.07987e-06
-  children [
-    Shape {
-      appearance PBRAppearance {
-      }
-      geometry DEF slop_box Box {
-        size 1.5 2.2 0.1
-      }
-    }
-  ]
-  name "0(1)"
-  boundingObject USE slop_box
-}
-Solid {
-  translation 5.63269 -5.28 2.02663
-  rotation 0 1 0 4.079871537635201e-06
-  children [
-    Shape {
-      appearance PBRAppearance {
-      }
-      geometry DEF slop_box Box {
-        size 1.5 2.2 0.1
-      }
-    }
-  ]
-  name "0(2)"
-  boundingObject USE slop_box
-}
-Solid {
-  translation 5.47269 -7.76 2.42663
-  rotation 0 1 0 4.079871537635201e-06
-  children [
-    Shape {
-      appearance PBRAppearance {
-      }
-      geometry DEF slop_box Box {
-        size 1.5 2.2 0.1
-      }
-    }
-  ]
-  name "0(3)"
-  boundingObject USE slop_box
-}
-Solid {
-  translation 2.71087 -2.62 0.803968
-  rotation 0 1 0 -0.349065844
-  children [
-    Shape {
-      appearance PBRAppearance {
-      }
-      geometry DEF slop_box Box {
-        size 5 2.2 0.1
-      }
-    }
-  ]
-  name "20"
-  boundingObject USE slop_box
-}
-Solid {
-  translation 8.87032 -2.62 0.803921
-  rotation 0 1 0 0.349066
-  children [
-    Shape {
-      appearance PBRAppearance {
-      }
-      geometry DEF slop_box Box {
-        size 5 2.2 0.1
-      }
-    }
-  ]
-  name "20(1)"
-  boundingObject USE slop_box
-}
-Solid {
-  translation 2.62747 -5.28 0.98577
-  rotation 0 1 0 -0.43
-  children [
-    Shape {
-      appearance PBRAppearance {
-      }
-      geometry DEF slop_box Box {
-        size 5 2.2 0.1
-      }
-    }
-  ]
-  name "25"
-  boundingObject USE slop_box
-}
-Solid {
-  translation 8.63516 -5.28 0.9972
-  rotation 0 1 0 0.43
-  children [
-    Shape {
-      appearance PBRAppearance {
-      }
-      geometry DEF slop_box Box {
-        size 5 2.2 0.1
-      }
-    }
-  ]
-  name "25(1)"
-  boundingObject USE slop_box
-}
-Solid {
-  translation 2.57518 -7.76 1.19787
-  rotation 0 1 0 -0.52
-  children [
-    Shape {
-      appearance PBRAppearance {
-      }
-      geometry DEF slop_box Box {
-        size 5 2.2 0.1
-      }
-    }
-  ]
-  name "30"
-  boundingObject USE slop_box
-}
-Solid {
-  translation 8.36825 -7.76 1.19267
-  rotation 0 1 0 0.52
-  children [
-    Shape {
-      appearance PBRAppearance {
-      }
-      geometry DEF slop_box Box {
-        size 5 2.2 0.1
-      }
-    }
-  ]
-  name "30(1)"
-  boundingObject USE slop_box
+WoodenPallet {
+  translation 1.02 0.46 0
+  rotation 0 0 1 -0.785395307179586
+  name "wooden pallet(1)"
+  size 0.4 0.4 0.1
+  lathNumber 3
 }
 DEF contrl_box Robot {
   name "control_box"
+}
+Rock {
+  translation 0.44 -0.1 0.07
+  rotation 0 0 1 -1.047195307179586
+}
+Rock {
+  translation 1.48 -0.12 0.07
+  name "rock(19)"
+}
+Rock {
+  translation 1.27 0.38 0.07
+  name "rock(20)"
+}
+Rock {
+  translation 0.91 0.26 0.07
+  name "rock(21)"
+}
+Rock {
+  translation 1.58 0.36 0.07
+  name "rock(22)"
+}
+Rock {
+  translation 0.46 0.33 0.07
+  name "rock(23)"
+}
+Rock {
+  translation 0.88 0.41 0.07
+  rotation 0 0 1 -0.523595307179586
+  name "rock(24)"
+}
+Rock {
+  translation 1.12 -0.17 0
+  name "rock(1)"
+}
+Rock {
+  translation 0.6 -0.23 0
+  name "rock(2)"
+}
+Rock {
+  translation 1.32 -0.22 0
+  rotation 0 0 1 -0.785395307179586
+  name "rock(3)"
+}
+Rock {
+  translation 1.56 -0.25 0.04
+  rotation 0 0 1 -0.261795307179586
+  name "rock(4)"
+}
+Rock {
+  translation 1.62 0.21 0.05
+  rotation 0 0 1 -0.523595307179586
+  name "rock(5)"
+}
+Rock {
+  translation 1.43 0.34 0
+  name "rock(6)"
+}
+Rock {
+  translation 1.13 0.27 0
+  name "rock(7)"
+}
+Rock {
+  translation 0.88 -0.27 0
+  rotation 0 0 1 1.5708
+  name "rock(8)"
+}
+Rock {
+  translation 1.34 0.22 0
+  rotation 0 0 1 -1.047195307179586
+  name "rock(9)"
+}
+Rock {
+  translation 1.66 0 0
+  name "rock(10)"
+}
+Rock {
+  translation 1.21 0 0
+  name "rock(11)"
+}
+Rock {
+  translation 1.44 0 0
+  name "rock(12)"
+}
+Rock {
+  translation 0.88 -0.12 0
+  name "rock(13)"
+}
+Rock {
+  translation 0.7 0.31 0.05
+  rotation 0 0 1 -0.785395307179586
+  name "rock(14)"
+}
+Rock {
+  translation 0.64 0 0
+  name "rock(15)"
+}
+Rock {
+  translation 0.88 0.05 0
+  name "rock(16)"
+}
+Rock {
+  translation 1.05 0.11 0
+  name "rock(17)"
+}
+Rock {
+  translation 0.57 0.15 0
+  name "rock(18)"
 }
