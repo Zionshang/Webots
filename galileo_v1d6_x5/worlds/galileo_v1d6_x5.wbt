@@ -43,7 +43,7 @@ DEF GalileoV1d6X5 Robot {
       }
       geometry DEF TRUCK Mesh {
         url [
-          "/home/zishang/Webots/galileo_v1d6_x5/protos/meshes/TRUCK.STL"
+          "../protos/meshes/TRUCK.STL"
         ]
       }
     }
@@ -74,7 +74,7 @@ DEF GalileoV1d6X5 Robot {
             }
             geometry DEF FL_HIP Mesh {
               url [
-                "/home/zishang/Webots/galileo_v1d6_x5/protos/meshes/FL_HIP.STL"
+                "../protos/meshes/FL_HIP.STL"
               ]
             }
           }
@@ -107,7 +107,7 @@ DEF GalileoV1d6X5 Robot {
                   }
                   geometry DEF FL_THIGH Mesh {
                     url [
-                      "/home/zishang/Webots/galileo_v1d6_x5/protos/meshes/FL_THIGH.STL"
+                      "../protos/meshes/FL_THIGH.STL"
                     ]
                   }
                 }
@@ -140,7 +140,7 @@ DEF GalileoV1d6X5 Robot {
                         }
                         geometry DEF FL_CALF Mesh {
                           url [
-                            "/home/zishang/Webots/galileo_v1d6_x5/protos/meshes/FL_CALF.STL"
+                            "../protos/meshes/FL_CALF.STL"
                           ]
                         }
                       }
@@ -289,7 +289,7 @@ DEF GalileoV1d6X5 Robot {
             }
             geometry DEF RL_HIP Mesh {
               url [
-                "/home/zishang/Webots/galileo_v1d6_x5/protos/meshes/RL_HIP.STL"
+                "../protos/meshes/RL_HIP.STL"
               ]
             }
           }
@@ -499,7 +499,7 @@ DEF GalileoV1d6X5 Robot {
                 }
                 geometry DEF FL_HIP_cw Mesh {
                   url [
-                    "/home/zishang/Webots/galileo_v1d6_x5/protos/meshes/FL_HIP.STL"
+                    "../protos/meshes/FL_HIP.STL"
                   ]
                   ccw FALSE
                 }
@@ -538,7 +538,7 @@ DEF GalileoV1d6X5 Robot {
                       }
                       geometry DEF FL_THIGH_cw Mesh {
                         url [
-                          "/home/zishang/Webots/galileo_v1d6_x5/protos/meshes/FL_THIGH.STL"
+                          "../protos/meshes/FL_THIGH.STL"
                         ]
                         ccw FALSE
                       }
@@ -577,7 +577,7 @@ DEF GalileoV1d6X5 Robot {
                             }
                             geometry DEF FL_CALF_cw Mesh {
                               url [
-                                "/home/zishang/Webots/galileo_v1d6_x5/protos/meshes/FL_CALF.STL"
+                                "../protos/meshes/FL_CALF.STL"
                               ]
                               ccw FALSE
                             }
@@ -732,7 +732,7 @@ DEF GalileoV1d6X5 Robot {
                 }
                 geometry DEF RL_HIP_cw Mesh {
                   url [
-                    "/home/zishang/Webots/galileo_v1d6_x5/protos/meshes/RL_HIP.STL"
+                    "../protos/meshes/RL_HIP.STL"
                   ]
                   ccw FALSE
                 }
@@ -935,7 +935,7 @@ DEF GalileoV1d6X5 Robot {
           }
           geometry DEF link0 Mesh {
             url [
-              "/home/zishang/ros2_workspace/robot_description/src/galileo_v1d6_x5_description/meshes/link0.STL"
+              "../protos/meshes/link0.STL"
             ]
           }
         }
@@ -966,7 +966,7 @@ DEF GalileoV1d6X5 Robot {
                 }
                 geometry DEF link1 Mesh {
                   url [
-                    "/home/zishang/ros2_workspace/robot_description/src/galileo_v1d6_x5_description/meshes/link1.STL"
+                    "../protos/meshes/link1.STL"
                   ]
                 }
               }
@@ -998,7 +998,7 @@ DEF GalileoV1d6X5 Robot {
                       }
                       geometry DEF link2 Mesh {
                         url [
-                          "/home/zishang/ros2_workspace/robot_description/src/galileo_v1d6_x5_description/meshes/link2.STL"
+                          "../protos/meshes/link2.STL"
                         ]
                       }
                     }
@@ -1029,7 +1029,7 @@ DEF GalileoV1d6X5 Robot {
                             }
                             geometry DEF link3 Mesh {
                               url [
-                                "/home/zishang/ros2_workspace/robot_description/src/galileo_v1d6_x5_description/meshes/link3.STL"
+                                "../protos/meshes/link3.STL"
                               ]
                             }
                           }
@@ -1061,7 +1061,7 @@ DEF GalileoV1d6X5 Robot {
                                   }
                                   geometry DEF link4 Mesh {
                                     url [
-                                      "/home/zishang/ros2_workspace/robot_description/src/galileo_v1d6_x5_description/meshes/link4.STL"
+                                      "../protos/meshes/link4.STL"
                                     ]
                                   }
                                 }
@@ -1092,7 +1092,7 @@ DEF GalileoV1d6X5 Robot {
                                         }
                                         geometry DEF link5 Mesh {
                                           url [
-                                            "/home/zishang/ros2_workspace/robot_description/src/galileo_v1d6_x5_description/meshes/link5.STL"
+                                            "../protos/meshes/link5.STL"
                                           ]
                                         }
                                       }
@@ -1123,7 +1123,7 @@ DEF GalileoV1d6X5 Robot {
                                               }
                                               geometry DEF link6 Mesh {
                                                 url [
-                                                  "/home/zishang/ros2_workspace/robot_description/src/galileo_v1d6_x5_description/meshes/link6.STL"
+                                                  "../protos/meshes/link6.STL"
                                                 ]
                                               }
                                             }
@@ -1152,7 +1152,7 @@ DEF GalileoV1d6X5 Robot {
                                                     }
                                                     geometry DEF link7 Mesh {
                                                       url [
-                                                        "/home/zishang/ros2_workspace/robot_description/src/galileo_v1d6_x5_description/meshes/link7.STL"
+                                                        "../protos/meshes/link7.STL"
                                                       ]
                                                     }
                                                   }
@@ -1197,7 +1197,7 @@ DEF GalileoV1d6X5 Robot {
                                                     }
                                                     geometry DEF link8 Mesh {
                                                       url [
-                                                        "/home/zishang/ros2_workspace/robot_description/src/galileo_v1d6_x5_description/meshes/link8.STL"
+                                                        "../protos/meshes/link8.STL"
                                                       ]
                                                     }
                                                   }
