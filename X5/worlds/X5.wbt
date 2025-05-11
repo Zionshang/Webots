@@ -7,8 +7,8 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/project
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.14584229547625335 0.062053699806346625 0.9873597941938699 2.346174632223168
-  position 0.698105206863498 -0.589568857321376 0.36652320786471015
+  orientation -0.13066575116701667 0.09572786519831725 0.9867941210285621 1.8896991115212547
+  position 0.4188557509640111 -0.6913142240632091 0.32657887271376157
 }
 TexturedBackground {
 }
@@ -17,7 +17,7 @@ TexturedBackgroundLight {
 RectangleArena {
   floorSize 10 10
 }
-Robot {
+DEF X5 Robot {
   children [
     Shape {
       appearance DEF link0_material PBRAppearance {
@@ -213,6 +213,21 @@ Robot {
                                       translation 0.02895 0 0.0865
                                       rotation -1 0 0 3.1416
                                       children [
+                                        Camera {
+                                          translation 0.05 0 0.045
+                                          rotation 0 0 1 0.1308996938995747
+                                          children [
+                                            Shape {
+                                              appearance PBRAppearance {
+                                                baseColor 0.109804 0.443137 0.847059
+                                                metalness 0
+                                              }
+                                              geometry Box {
+                                                size 0.01 0.05 0.02
+                                              }
+                                            }
+                                          ]
+                                        }
                                         Shape {
                                           appearance DEF link6_material PBRAppearance {
                                             baseColor 0.89804 0.91765 0.92941
@@ -488,7 +503,7 @@ Robot {
       }
     }
   ]
-  name "X5Description"
+  name "X5"
   boundingObject Pose {
     translation 0 0 0.03
     children [
@@ -498,4 +513,6 @@ Robot {
       }
     ]
   }
+  controller "<extern>"
+  supervisor TRUE
 }
