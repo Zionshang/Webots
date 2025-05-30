@@ -8,8 +8,8 @@ WorldInfo {
   basicTimeStep 1
 }
 Viewpoint {
-  orientation 0.150992549583336 0.031867563216905516 -0.9880211072567936 2.730414458288222
-  position 2.4313170740375143 1.110452181220148 0.944765389874297
+  orientation -0.05160492722744179 -0.029517958379162077 0.9982312465651317 4.179273966118222
+  position 0.48792864209490716 0.8403092518537689 0.38021792514331315
 }
 TexturedBackground {
 }
@@ -19,7 +19,7 @@ RectangleArena {
   floorSize 20 20
 }
 DEF go2 Robot {
-  translation 0 0 0.335
+  translation 0 0 0.34
   children [
     DEF base_visual CadShape {
       url [
@@ -67,7 +67,7 @@ DEF go2 Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position 0.068
+        position 3.1037408272966936e-06
         anchor 0.1934 0.0465 0
       }
       device [
@@ -84,7 +84,7 @@ DEF go2 Robot {
       ]
       endPoint Solid {
         translation 0.1934 0.0465 0
-        rotation 1 0 0 0.0679999999999994
+        rotation 1 0 0 3.1037369637373413e-06
         children [
           DEF hip_visual CadShape {
             url [
@@ -93,7 +93,7 @@ DEF go2 Robot {
           }
           HingeJoint {
             jointParameters HingeJointParameters {
-              position 0.785
+              position 0.7850007238951413
               axis 0 1 0
               anchor 0 0.0955 0
             }
@@ -111,7 +111,7 @@ DEF go2 Robot {
             ]
             endPoint Solid {
               translation 0 0.0955 0
-              rotation 0 1 0 0.7850000000000003
+              rotation 0 1 0 0.7850007238951412
               children [
                 DEF thigh_visual CadShape {
                   url [
@@ -120,7 +120,7 @@ DEF go2 Robot {
                 }
                 HingeJoint {
                   jointParameters HingeJointParameters {
-                    position -1.44
+                    position -1.4400059356646708
                     axis 0 1 0
                     anchor 0 0 -0.213
                   }
@@ -138,7 +138,7 @@ DEF go2 Robot {
                   ]
                   endPoint Solid {
                     translation 0 0 -0.213
-                    rotation 0 -1 0 1.4399999999999997
+                    rotation 0 -1 0 1.4400059356646708
                     children [
                       DEF calf_visual CadShape {
                         url [
@@ -296,7 +296,7 @@ DEF go2 Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position -0.068
+        position -3.1037080335810064e-06
         anchor 0.1934 -0.0465 0
       }
       device [
@@ -313,7 +313,7 @@ DEF go2 Robot {
       ]
       endPoint Solid {
         translation 0.1934 -0.0465 0
-        rotation -1 0 0 0.0679999999999994
+        rotation -1 0 0 3.1037369637373413e-06
         children [
           Pose {
             rotation 1 0 0 3.1415
@@ -323,7 +323,7 @@ DEF go2 Robot {
           }
           HingeJoint {
             jointParameters HingeJointParameters {
-              position 0.785
+              position 0.7850007238825615
               axis 0 1 0
               anchor 0 -0.0955 0
             }
@@ -341,7 +341,7 @@ DEF go2 Robot {
             ]
             endPoint Solid {
               translation 0 -0.0955 0
-              rotation 0 1 0 0.7850000000000003
+              rotation 0 1 0 0.7850007238825616
               children [
                 DEF thigh_mirror_visual CadShape {
                   url [
@@ -350,7 +350,7 @@ DEF go2 Robot {
                 }
                 HingeJoint {
                   jointParameters HingeJointParameters {
-                    position -1.44
+                    position -1.440005935645509
                     axis 0 1 0
                     anchor 0 0 -0.213
                   }
@@ -368,7 +368,7 @@ DEF go2 Robot {
                   ]
                   endPoint Solid {
                     translation 0 0 -0.213
-                    rotation 0 -1 0 1.4399999999999997
+                    rotation 0 -1 0 1.440005935645509
                     children [
                       DEF calf_mirror_visual CadShape {
                         url [
@@ -522,7 +522,7 @@ DEF go2 Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position 0.068
+        position 2.282613752726174e-06
         anchor -0.1934 0.0465 0
       }
       device [
@@ -539,7 +539,7 @@ DEF go2 Robot {
       ]
       endPoint Solid {
         translation -0.1934 0.0465 0
-        rotation 1 0 0 0.0679999999999994
+        rotation 1 0 0 2.2825544046005783e-06
         children [
           Pose {
             rotation 0 1 0 3.1415
@@ -549,7 +549,7 @@ DEF go2 Robot {
           }
           HingeJoint {
             jointParameters HingeJointParameters {
-              position 0.785
+              position 0.7850004155004877
               axis 0 1 0
               anchor 0 0.0955 0
             }
@@ -567,12 +567,12 @@ DEF go2 Robot {
             ]
             endPoint Solid {
               translation 0 0.0955 0
-              rotation 0 1 0 0.7850000000000003
+              rotation 0 1 0 0.7850004155004877
               children [
                 USE thigh_visual
                 HingeJoint {
                   jointParameters HingeJointParameters {
-                    position -1.44
+                    position -1.4400046206721009
                     axis 0 1 0
                     anchor 0 0 -0.213
                   }
@@ -590,7 +590,7 @@ DEF go2 Robot {
                   ]
                   endPoint Solid {
                     translation 0 0 -0.213
-                    rotation 0 -1 0 1.4399999999999997
+                    rotation 0 -0.9999999999999999 0 1.4400046206721009
                     children [
                       USE calf_visual
                       Solid {
@@ -740,7 +740,7 @@ DEF go2 Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position -0.068
+        position -2.2825839778306545e-06
         anchor -0.1934 -0.0465 0
       }
       device [
@@ -757,7 +757,7 @@ DEF go2 Robot {
       ]
       endPoint Solid {
         translation -0.1934 -0.0465 0
-        rotation -1 0 0 0.0679999999999994
+        rotation -1 0 0 2.2825544046005783e-06
         children [
           Pose {
             rotation 4.5999999902663995e-05 4.5999999902663995e-05 -0.999999997884 3.141593
@@ -767,7 +767,7 @@ DEF go2 Robot {
           }
           HingeJoint {
             jointParameters HingeJointParameters {
-              position 0.785
+              position 0.785000415489999
               axis 0 1 0
               anchor 0 -0.0955 0
             }
@@ -785,12 +785,12 @@ DEF go2 Robot {
             ]
             endPoint Solid {
               translation 0 -0.0955 0
-              rotation 0 1 0 0.7850000000000003
+              rotation 0 0.9999999999999999 0 0.7850004154899991
               children [
                 USE thigh_mirror_visual
                 HingeJoint {
                   jointParameters HingeJointParameters {
-                    position -1.44
+                    position -1.4400046206553494
                     axis 0 1 0
                     anchor 0 0 -0.213
                   }
@@ -808,7 +808,7 @@ DEF go2 Robot {
                   ]
                   endPoint Solid {
                     translation 0 0 -0.213
-                    rotation 0 -1 0 1.4399999999999997
+                    rotation 0 -1 0 1.4400046206553492
                     children [
                       USE calf_mirror_visual
                       Solid {
