@@ -8,8 +8,9 @@ WorldInfo {
   basicTimeStep 1
 }
 Viewpoint {
-  orientation 0.11982664050727475 -0.06841986836444894 -0.9904343985533478 4.170943323103159
-  position 1.1824658906275998 -1.7920630391319174 0.6847922138995901
+  orientation 0.12505935637937177 -0.013662339632407079 -0.9920551889173032 3.3574850878708373
+  position 3.099735536060963 -0.6111109268659023 0.9481470751646526
+  follow "GalileoV1d6"
 }
 TexturedBackground {
 }
@@ -19,7 +20,7 @@ RectangleArena {
   floorSize 100 100
 }
 DEF GalileoV1d6 Robot {
-  translation 0 0 0.41
+  translation 0 0 0.416422
   children [
     Solid {
       children [
@@ -49,6 +50,7 @@ DEF GalileoV1d6 Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
+        position 8.521191897473657e-06
         anchor 0.279 0.067 0
       }
       device [
@@ -65,7 +67,7 @@ DEF GalileoV1d6 Robot {
       ]
       endPoint Solid {
         translation 0.279 0.067 0
-        rotation 1 0 0 0
+        rotation 1 0 0 8.521171408171208e-06
         children [
           Shape {
             appearance DEF FL_hip_material PBRAppearance {
@@ -80,7 +82,7 @@ DEF GalileoV1d6 Robot {
           }
           HingeJoint {
             jointParameters HingeJointParameters {
-              position 0.72
+              position 0.7199993861136071
               axis 0 1 0
               anchor 0 0.1103 0
             }
@@ -98,7 +100,7 @@ DEF GalileoV1d6 Robot {
             ]
             endPoint Solid {
               translation 0 0.1103 0
-              rotation 0 1 0 0.7200000000000003
+              rotation 0 1 0 0.7199993861136074
               children [
                 Shape {
                   appearance DEF FL_thigh_material PBRAppearance {
@@ -113,7 +115,7 @@ DEF GalileoV1d6 Robot {
                 }
                 HingeJoint {
                   jointParameters HingeJointParameters {
-                    position -1.44
+                    position -1.4400159473101612
                     axis 0 1 0
                     anchor 0 0 -0.26
                   }
@@ -131,7 +133,7 @@ DEF GalileoV1d6 Robot {
                   ]
                   endPoint Solid {
                     translation 0 0 -0.26
-                    rotation 0 -1 0 1.4399999999999997
+                    rotation 0 -1 0 1.4400159473101612
                     children [
                       Shape {
                         appearance DEF FL_calf_material PBRAppearance {
@@ -264,6 +266,7 @@ DEF GalileoV1d6 Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
+        position 8.921854833166502e-06
         anchor -0.279 0.067 0
       }
       device [
@@ -280,7 +283,7 @@ DEF GalileoV1d6 Robot {
       ]
       endPoint Solid {
         translation -0.279 0.067 0
-        rotation 1 0 0 0
+        rotation 1 0 0 8.921851722152579e-06
         children [
           Shape {
             appearance DEF RL_hip_material PBRAppearance {
@@ -295,7 +298,7 @@ DEF GalileoV1d6 Robot {
           }
           HingeJoint {
             jointParameters HingeJointParameters {
-              position 0.72
+              position 0.7199994638310617
               axis 0 1 0
               anchor 0 0.1103 0
             }
@@ -313,7 +316,7 @@ DEF GalileoV1d6 Robot {
             ]
             endPoint Solid {
               translation 0 0.1103 0
-              rotation 0 1 0 0.7200000000000003
+              rotation 0 1 0 0.7199994638310618
               children [
                 Shape {
                   appearance DEF RL_thigh_material PBRAppearance {
@@ -324,7 +327,7 @@ DEF GalileoV1d6 Robot {
                 }
                 HingeJoint {
                   jointParameters HingeJointParameters {
-                    position -1.44
+                    position -1.4400165691785074
                     axis 0 1 0
                     anchor 0 0 -0.26
                   }
@@ -342,7 +345,7 @@ DEF GalileoV1d6 Robot {
                   ]
                   endPoint Solid {
                     translation 0 0 -0.26
-                    rotation 0 -1 0 1.4399999999999997
+                    rotation 0 -1 0 1.4400165691785074
                     children [
                       Shape {
                         appearance DEF RL_calf_material PBRAppearance {
@@ -471,6 +474,7 @@ DEF GalileoV1d6 Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
+        position -9.242718352608645e-06
         anchor 0.279 -0.067 0
       }
       device [
@@ -487,7 +491,7 @@ DEF GalileoV1d6 Robot {
       ]
       endPoint Solid {
         translation 0.279 -0.067 0
-        rotation 1 0 0 0
+        rotation -1 0 0 9.2427087448523e-06
         children [
           Transform {
             scale 1 -1 1
@@ -508,7 +512,7 @@ DEF GalileoV1d6 Robot {
           }
           HingeJoint {
             jointParameters HingeJointParameters {
-              position 0.72
+              position 0.7199993926892898
               axis 0 1 0
               anchor 0 -0.1103 0
             }
@@ -526,7 +530,7 @@ DEF GalileoV1d6 Robot {
             ]
             endPoint Solid {
               translation 0 -0.1103 0
-              rotation 0 1 0 0.7200000000000003
+              rotation 0 1 0 0.71999939268929
               children [
                 Transform {
                   scale 1 -1 1
@@ -547,7 +551,7 @@ DEF GalileoV1d6 Robot {
                 }
                 HingeJoint {
                   jointParameters HingeJointParameters {
-                    position -1.44
+                    position -1.4400170767898748
                     axis 0 1 0
                     anchor 0 0 -0.26
                   }
@@ -565,7 +569,7 @@ DEF GalileoV1d6 Robot {
                   ]
                   endPoint Solid {
                     translation 0 0 -0.26
-                    rotation 0 -1 0 1.4399999999999997
+                    rotation 0 -1 0 1.440017076789875
                     children [
                       Transform {
                         scale 1 -1 1
@@ -704,6 +708,7 @@ DEF GalileoV1d6 Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
+        position -9.639032327554168e-06
         anchor -0.279 -0.067 0
       }
       device [
@@ -720,7 +725,7 @@ DEF GalileoV1d6 Robot {
       ]
       endPoint Solid {
         translation -0.279 -0.067 0
-        rotation 1 0 0 0
+        rotation -1 0 0 9.639012819172436e-06
         children [
           Transform {
             scale 1 -1 1
@@ -741,7 +746,7 @@ DEF GalileoV1d6 Robot {
           }
           HingeJoint {
             jointParameters HingeJointParameters {
-              position 0.72
+              position 0.7199993855535218
               axis 0 1 0
               anchor 0 -0.1103 0
             }
@@ -759,7 +764,7 @@ DEF GalileoV1d6 Robot {
             ]
             endPoint Solid {
               translation 0 -0.1103 0
-              rotation 0 1 0 0.7200000000000003
+              rotation 0 1 0 0.7199993855535218
               children [
                 Transform {
                   scale 1 -1 1
@@ -775,7 +780,7 @@ DEF GalileoV1d6 Robot {
                 }
                 HingeJoint {
                   jointParameters HingeJointParameters {
-                    position -1.44
+                    position -1.4400176982048465
                     axis 0 1 0
                     anchor 0 0 -0.26
                   }
@@ -793,7 +798,7 @@ DEF GalileoV1d6 Robot {
                   ]
                   endPoint Solid {
                     translation 0 0 -0.26
-                    rotation 0 -1 0 1.4399999999999997
+                    rotation 0 -1 0 1.4400176982048465
                     children [
                       Transform {
                         scale 1 -1 1

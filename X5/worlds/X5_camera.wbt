@@ -8,8 +8,8 @@ WorldInfo {
   basicTimeStep 1
 }
 Viewpoint {
-  orientation -0.1894915812881752 0.10162796252718782 0.9766087742046348 2.176636767154727
-  position 2.4250224933592577 -3.573254562141724 1.7058136874412053
+  orientation -0.18019060449517765 0.0714026124783241 0.9810367031782924 2.4000720222172567
+  position 1.317730742790119 -1.194551386456011 0.7728313201580373
 }
 TexturedBackground {
 }
@@ -214,6 +214,21 @@ DEF X5 Robot {
                                       translation 0.02895 0 0.0865
                                       rotation -1 0 0 3.1416
                                       children [
+                                        Camera {
+                                          translation 0.05 0 0.045
+                                          rotation 0 0 1 0.1308996938995747
+                                          children [
+                                            Shape {
+                                              appearance PBRAppearance {
+                                                baseColor 0.109804 0.443137 0.847059
+                                                metalness 0
+                                              }
+                                              geometry Box {
+                                                size 0.01 0.05 0.02
+                                              }
+                                            }
+                                          ]
+                                        }
                                         Shape {
                                           appearance DEF link6_material PBRAppearance {
                                             baseColor 0.89804 0.91765 0.92941
