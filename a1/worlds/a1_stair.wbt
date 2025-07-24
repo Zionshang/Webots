@@ -3,14 +3,14 @@
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/solids/protos/SolidBox.proto"
 
 WorldInfo {
   basicTimeStep 1
 }
 Viewpoint {
-  orientation 0.1414500105911188 -0.06965258997206486 -0.987491980328932 4.046762052961971
-  position 0.9338218494588187 -1.0862015233103852 0.5373700698783401
-  follow "A1"
+  orientation 0.16613632260215247 -0.24640173913675656 -0.9548219233252948 5.053481944869596
+  position -0.253632242795235 -1.8961409742121367 0.6120932520862207
 }
 TexturedBackground {
 }
@@ -20,7 +20,8 @@ RectangleArena {
   floorSize 50 50
 }
 DEF A1 Robot {
-  translation 0 0 0.32
+  translation -0.000503899 0.000205106 0.32
+  rotation -0.37790211777852123 -0.9258455512094771 -6.844069166881444e-05 0.0016921828101181524
   children [
     Solid {
       children [
@@ -167,12 +168,6 @@ DEF A1 Robot {
                       Solid {
                         translation 0 0 -0.2
                         children [
-                          TouchSensor {
-                            name "FR_touch_sensor"
-                            boundingObject Sphere {
-                              radius 0.02
-                            }
-                          }
                           Shape {
                             appearance DEF grey PBRAppearance {
                               baseColor 0.5 0.5 0.5
@@ -372,12 +367,6 @@ DEF A1 Robot {
                       Solid {
                         translation 0 0 -0.2
                         children [
-                          TouchSensor {
-                            name "FL_touch_sensor"
-                            boundingObject Sphere {
-                              radius 0.02
-                            }
-                          }
                           Shape {
                             appearance DEF grey PBRAppearance {
                               baseColor 0.5 0.5 0.5
@@ -582,12 +571,6 @@ DEF A1 Robot {
                       Solid {
                         translation 0 0 -0.2
                         children [
-                          TouchSensor {
-                            name "RR_touch_sensor"
-                            boundingObject Sphere {
-                              radius 0.02
-                            }
-                          }
                           Shape {
                             appearance DEF grey PBRAppearance {
                               baseColor 0.5 0.5 0.5
@@ -792,12 +775,6 @@ DEF A1 Robot {
                       Solid {
                         translation 0 0 -0.2
                         children [
-                          TouchSensor {
-                            name "RL_touch_sensor"
-                            boundingObject Sphere {
-                              radius 0.02
-                            }
-                          }
                           Shape {
                             appearance DEF grey PBRAppearance {
                               baseColor 0.5 0.5 0.5
@@ -915,4 +892,13 @@ DEF A1 Robot {
   }
   controller "<extern>"
   supervisor TRUE
+  selfCollision TRUE
+}
+SolidBox {
+  translation 0.5 0 0.025
+  size 0.2 1 0.05
+  appearance Appearance {
+    material Material {
+    }
+  }
 }

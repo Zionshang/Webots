@@ -8,8 +8,8 @@ WorldInfo {
   basicTimeStep 1
 }
 Viewpoint {
-  orientation 0.12505935637937177 -0.013662339632407079 -0.9920551889173032 3.3574850878708373
-  position 3.099735536060963 -0.6111109268659023 0.9481470751646526
+  orientation 0.11487095626257218 -0.06867235399170792 -0.991003920882536 4.211257750401115
+  position 1.1283433358013928 -1.8747741522095125 0.7056511443268523
   follow "GalileoV1d6"
 }
 TexturedBackground {
@@ -27,7 +27,6 @@ DEF GalileoV1d6 Robot {
         Gyro {
         }
         InertialUnit {
-          name "imu"
         }
         Accelerometer {
         }
@@ -149,6 +148,12 @@ DEF GalileoV1d6 Robot {
                       Solid {
                         translation 0 0 -0.26
                         children [
+                          TouchSensor {
+                            name "FL_touch_sensor"
+                            boundingObject Sphere {
+                              radius 0.026
+                            }
+                          }
                           Shape {
                             appearance DEF FL_foot_material PBRAppearance {
                               roughness 1
@@ -357,6 +362,12 @@ DEF GalileoV1d6 Robot {
                       Solid {
                         translation 0 0 -0.26
                         children [
+                          TouchSensor {
+                            name "RL_touch_sensor"
+                            boundingObject Sphere {
+                              radius 0.026
+                            }
+                          }
                           Shape {
                             appearance DEF RL_foot_material PBRAppearance {
                               roughness 1
@@ -591,6 +602,12 @@ DEF GalileoV1d6 Robot {
                       Solid {
                         translation 0 0 -0.26
                         children [
+                          TouchSensor {
+                            name "FR_touch_sensor"
+                            boundingObject Sphere {
+                              radius 0.026
+                            }
+                          }
                           Shape {
                             appearance DEF FR_foot_material PBRAppearance {
                               roughness 1
@@ -815,6 +832,12 @@ DEF GalileoV1d6 Robot {
                       Solid {
                         translation 0 0 -0.26
                         children [
+                          TouchSensor {
+                            name "RR_touch_sensor"
+                            boundingObject Sphere {
+                              radius 0.026
+                            }
+                          }
                           Shape {
                             appearance DEF RR_foot_material PBRAppearance {
                               roughness 1
